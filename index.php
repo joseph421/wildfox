@@ -12,9 +12,14 @@
         <script src="./js/bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="./js/jquery/jquery-2.0.0.js" type="text/javascript"></script>
         <script src="./js/wildfox/maingui.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./js/eidogo/js/all.compressed.js"></script>
     </head>
     <body>
         <div class="head">
+            <?php
+//                phpinfo();
+                
+            ?>
             
         </div>
         <div class="body">
@@ -26,7 +31,26 @@
                 <a href="" class="button orange glossy" >打谱</a>
             </div>
             <div class="">
-                
+                <div id="player-container"></div>
+                <script type="text/javascript">
+                var player = new eidogo.Player({
+                    container:       "player-container", // HTML element id indicating where to put the player
+                    theme:           "standard", // "standard" or "compact"
+                    sgfUrl:          "./resource/sgf/example.sgf", // relative URL (within same domain) to SGF file to load 
+                    loadPath:        [0, 0], // The location within the game tree to start at
+                    mode:            "play", // "play" or "view"
+                    showComments:    true,
+                    showPlayerInfo:  true,
+                    showGameInfo:    true,
+                    showTools:       true,
+                    showOptions:     true,
+                    markCurrent:     true,
+                    markVariations:  true,
+                    markNext:        false,
+                    enableShortcuts: false,
+                    problemMode:     false
+                });
+            </script>
             </div>
         </div>
         <div class="foot">
