@@ -6,12 +6,25 @@
  */
 define('HOST', "localhost");    
 $action = $_GET['action'];
+
 if ($action == 'getUserInfo') { 
     $user = stripslashes(trim($_GET['userId'])); 
     $pass = stripslashes(trim($_GET['pwd'])); 
-    $response['userInfo'] = $user;
-    $response['score'] = 100;
+    $userInfo =  array(
+        'userId'=>'',
+        'right'=>'',
+        'score'=>''
+    );
+    $userInfo['userId'] = $user;
+    $userInfo['score'] = 100;
+    
+    $response = array(
+        'body'=>array(
+            'userInfo'=>$userInfo
+        ),
+        'status'=>''
+    );
     $response['status'] = '0000';
-    echo json_decode($response);
+    echo json_encode($response);
 }    
 ?>
