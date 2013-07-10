@@ -1,0 +1,25 @@
+/* 
+    Document   : main.css
+    Created on : 2013-7-10, 12:36:07
+    Author     : CyberWH
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    background: #e1c192 url(../js/CustomLoginFormStyling/images/wood_pattern.jpg);
+    width:100%;
+    height:100%;
+}
+
+.body{
+    
+}
+
+.form-4 input{
+    height: 32px;
+}

@@ -9,53 +9,50 @@
         <link rel="stylesheet" type="text/css" href="./js/bonbonButton/buttons.css">
         <link rel="stylesheet" type="text/css" href="./js/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="./js/bootstrap/css/bootstrap-responsive.css">
+        <!--
         <script src="./js/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        -->
+        <link rel="stylesheet" href="./js/artDialog/skins/black.css?4.1.2"></link>
+	<script src="./js/artDialog/artDialog.source.js?skin=black"></script>        
         <script src="./js/jquery/jquery-2.0.0.js" type="text/javascript"></script>
         <script src="./js/wildfox/maingui.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="./js/CustomLoginFormStyling/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/main.css" />
+        <script src="./js/CustomLoginFormStyling/js/modernizr.custom.63321.js"></script>
         <script type="text/javascript" src="./js/eidogo/js/all.compressed.js"></script>
     </head>
     <body>
         <div class="head">
-            <?php
-//                phpinfo();
-                
-            ?>
-            
+
         </div>
         <div class="body">
-            <div class="menu">
-                <a href="" class="button orange glossy" >死活</a>
-                <a href="" class="button orange glossy" >手筋</a>
-                <a href="" class="button orange glossy" >布局</a>
-                <a href="" class="button orange glossy" >接触战</a>
-                <a href="" class="button orange glossy" >打谱</a>
-            </div>
-            <div class="">
-                <div id="player-container"></div>
-                <script type="text/javascript">
-                var player = new eidogo.Player({
-                    container:       "player-container", // HTML element id indicating where to put the player
-                    theme:           "standard", // "standard" or "compact"
-                    sgfUrl:          "./resource/sgf/example.sgf", // relative URL (within same domain) to SGF file to load 
-                    loadPath:        [0, 0], // The location within the game tree to start at
-                    mode:            "play", // "play" or "view"
-                    showComments:    true,
-                    showPlayerInfo:  true,
-                    showGameInfo:    true,
-                    showTools:       true,
-                    showOptions:     true,
-                    markCurrent:     true,
-                    markVariations:  true,
-                    markNext:        false,
-                    enableShortcuts: false,
-                    problemMode:     false
-                });
-            </script>
-            </div>
+            <section class="mainLogin" id ="loginPanel">
+                <form class="form-4" id="loginForm">
+                    <h1>用户登录</h1>
+                        <p>
+                            <label for="login">用户名</label>
+                                <input type="text" id="userInput" required="" placeholder="请输入用户名..." name="login">
+                        </p>
+			<p>
+                            <label for="password">密码</label>
+                            <input type="password" id="pwdInput" required="" placeholder="请输入密码..." name="password"> 
+			</p>
+
+			<p>
+                            <input type="submit" value="登录" name="loginSubmit">
+                            <!--
+                            <input type="button" value="测试" name="test" onclick="testStorage();">-->
+			</p>       
+                </form>
+            </section>
+            
+            <section class="mainContent" id ="contentPanel">
+                <form class="form-6">
+                           
+                </form>
+            </section>
         </div>
         <div class="foot">
-            
-            
         </div>
     </body>
 </html>
