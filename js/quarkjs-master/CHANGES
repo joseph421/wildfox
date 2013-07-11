@@ -1,0 +1,75 @@
+== 2012.7.10 v1.0.0 build 119 ==
+
+Modified:
+	* Update API documentation.
+
+== 2012.4.26 v1.0.0 build 118 ==
+
+Fixed:
+	* MovieClip._update() - incorrect setRect() method call.
+
+== 2012.4.25 v1.0.0 build 117 ==
+
+Modified:
+	* DisplayObject Event Mode - now DisplayObject inherits from EventDispatcher.
+
+== 2012.4.20 v1.0.0 build 113 ==
+
+Added:
+	* MovieClip.getNumFrames() - return the number of frames.
+
+== 2012.4.18 v1.0.0 build 112 ==
+
+Fixed:
+	* Text.getFontMetrics() - incorrect calculation of ascent and descent.
+
+== 2012.4.16 v1.0.0 build 111 ==
+
+Fixed:
+	* Button.setEnabled() - incorrect constant Button.UP.
+	* Text.render() - set line height for DOMContext.
+
+== 2012.4.10 v1.0.0 build 110 ==
+
+Fixed:
+	* DOMContext.draw() - dones't render objects if mix DOMContext with CanvasContext.
+	* DOMContext.transform() - use css property pointer-events to control whether a object can be a event target.
+	* Graphics._draw() - each draw should start with a beginPath() to clear all subpaths.
+
+== 2012.4.6 v1.0.0 build 107 ==
+
+Added:
+	* Quark.Text - a class for simple text drawing.
+
+== 2012.3.27 v1.0.0 build 104 ==
+
+Added:
+	* DisplayObject.cache(), uncache() - now only works for CanvasContext.
+	* Build version for each build.
+
+Fixed:
+	* DisplayObject.mask - incorrent behavior on containers or with background color.
+
+
+== 2012.3.22 v1.0.0 ==
+
+Modified:
+	* DisplayObject.onEvent() deprecated, use "on" event handlers instead, e.g. onmousedown, onmouseup, onmouseout etc.
+
+Fixed:
+	* Button state changes incorrect when move fast.
+
+
+== 2012.3.13 v1.0.0 ==
+
+Added:
+	* DisplayObject.mask property - only support webkit browsers when use DOMContext.
+	* Graphics.drawSVGPath() - draw graphics by using SVG path.
+	* DisplayObject.toImage() - return as an image in DataURL format. it's useful but be careful.
+
+Modified:	
+	* DisplayObject.update() - now returns true/false. if a container's update() returns false, its children don't update at all.
+
+Fixed:
+	* Button.setEnabled() - incorrect skin state change.
+	* Graphics.clear() - incorrect cache reset.

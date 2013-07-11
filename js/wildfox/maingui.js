@@ -9,11 +9,8 @@ var UserInfo = {
     right:"",
     score:""
 };
-$().ready(function(){
-    $("#loginForm").submit(function() {
-        doLogin();
-    });
-   
+$().ready(function(){  
+   changePanel('');
 });
 
 $(":submit[name='loginSubmit']").click(function() { 
@@ -38,9 +35,9 @@ var doLogin = function(){
                 return;
             }else{
                 if(data.status == "0000"){
-                    UserInfo.userId = data.body.userInfo.userId;
-                    UserInfo.right = data.body.userInfo.right;
-                    UserInfo.score = data.body.userInfo.score;
+//                    UserInfo.userId = data.body.userInfo.userId;
+//                    UserInfo.right = data.body.userInfo.right;
+//                    UserInfo.score = data.body.userInfo.score;
                     $("#loginPanel").hide();
                     $("#contentPanel").show();
                 }else{
@@ -53,6 +50,137 @@ var doLogin = function(){
             showMessage("错误","请求数据失败。");
         }
     });
+};
+
+var changePanel = function(panelName,subClass){
+    if(panelName == ''){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").hide();
+        $("#scoreManagement").hide();
+        $("#userManagement").hide();
+    }else if (panelName == 'selfIgoManual'){
+        $("#selfIgoManual").show();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").hide();
+        $("#scoreManagement").hide();
+        $("#userManagement").hide();
+    }
+    else if(panelName == 'professionalIgoManual'){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").show();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").hide();
+        $("#scoreManagement").hide();
+        $("#userManagement").hide();
+    }else if(panelName == 'igoManualGame'){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").show();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").hide();
+        $("#scoreManagement").hide();
+        $("#userManagement").hide();
+    }else if(panelName == 'liveAndDie'){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").show();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").hide();
+        $("#scoreManagement").hide();
+        $("#userManagement").hide();
+        if(subClass == "liveAndDie"){
+            
+        }else if(subClass == "arrangement"){
+            
+        }else if(subClass == "curcia"){
+            
+        }else if(subClass == "guanzi"){
+            
+        }else {
+            
+        }
+    }else if(panelName == 'vedioClasss'){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").show();
+        $("#games").hide();
+        $("#scoreManagement").hide();
+        $("#userManagement").hide();
+        if(subClass == "arrangement"){
+            
+        }else if(subClass == "fight"){
+            
+        }else if(subClass == "guanzi"){
+            
+        }else{
+            
+        }
+    }else if(panelName == 'games'){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").show();
+        $("#scoreManagement").hide();
+        $("#userManagement").hide();
+        if(subClass == "luobo"){
+            
+        }else if(subClass == "snowGround"){
+            
+        }else{
+            
+        }
+    }else if(panelName == 'scoreManagement'){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").hide();
+        $("#scoreManagement").show();
+        $("#userManagement").hide();
+    }else if(panelName == 'userManagement'){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").hide();
+        $("#scoreManagement").hide();
+        $("#userManagement").show();
+    }
 };
 
 var doSendSGFString = function (){

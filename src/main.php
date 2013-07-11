@@ -4,7 +4,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-define('HOST', "localhost");    
+define('HOST', "localhost");
+$responseModule = array(
+    'body'=>array(
+        'userInfo'=>array(
+            'userId'=>'',
+            'right'=>'',
+            'score'=>''
+        )
+    ),
+    'status'=>''
+);
+
 $action = $_GET['action'];
 
 if ($action == 'getUserInfo') { 
@@ -15,6 +26,7 @@ if ($action == 'getUserInfo') {
         'right'=>'',
         'score'=>''
     );
+    
     $userInfo['userId'] = $user;
     $userInfo['score'] = 100;
     
@@ -25,6 +37,7 @@ if ($action == 'getUserInfo') {
         'status'=>''
     );
     $response['status'] = '0000';
-    echo json_encode($response);
+    $rtn =  json_encode($response);
+    echo $rtn;
 }    
 ?>

@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QuarkJS - An HTML5 Game Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="quarkjs, a html5 game framework.">
+    <meta name="author" content="flashlizi">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body onload="prettyPrint();">
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">QuarkJS - An HTML5 Game Framework</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="index.html">首页</a></li>
+              <li><a href="http://github.com/quark-dev-team/quarkjs" target="_blank">源码下载</a></li>
+              <li><a href="api/index.html">API文档</a></li>
+              <li class="active"><a href="#">使用指南</a></li>
+              <li><a href="demo.html">作品演示</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">使用指南</li>
+              <li><a href="tutorial.html">快速开始 - Getting Started</a></li>
+              <li class="active"><a href="#">基础架构 - Infrastructure</a></li>
+              <li><a href="tutorial_context.html">上下文 - Context</a></li>
+              <li><a href="tutorial_displayobject.html">显示对象 - DisplayObject</a></li>
+              <li><a href="tutorial_event.html">事件处理 - Handling Events</a></li>
+
+              <li class="nav-header">实例分析</li>
+              <li><a href="tutorial_squirrel.html">跳跃的小松鼠</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="span9">
+          <div class="page-header">
+            <h1>基础架构</h1>
+          </div>
+
+          <div>
+            <div>
+              <h3>Quark的基础架构图：</h3><br/>
+              <p><img src="images/infrastructure.jpg"></p><br/>
+            </div>
+
+            <div>
+              <h3><li>显示对象列表（Display Object List）</li></h3><br/>
+              <ul>
+                <li>显示对象列表是Quark中参照Actionscript3中的显示对象列表设计的一套显示和管理对象的结构。他跟HTML的DOM树结构非常相似。</li>
+                <li>显示对象列表的根是舞台stage，可以通过调用 stage.step() 方法来更新显示对象列表。</li>
+              </ul>
+            </div>
+            <br>
+
+            <div>
+              <h3><li>上下文（Context）</li></h3><br/>
+              <ul>
+                <li>Context在Quark中负责对象的渲染，还包括位移、旋转、缩放等变换。参照CanvasRenderingContext2D的设计思路，我们实现了CanvasContext和DOMContext。</li>
+                <li>CanvasContext采用canvas渲染，DOMContext采用DOM和CSS的 background 和 transform(3d) 进行渲染。</li>
+                <li>Context有一个画布canvas属性，这是显示对象将被渲染到的地方。canvas属性是一个 HTMLCanvasElement 或 HTMLDivElement 对象。</li>
+                <li>Context会被注入到舞台stage里，显示对象列表更新的时候会调用context的 transform() 进行变换，再调用 draw() 方法绘制对象。</li>
+              </ul>
+            </div>
+            <br>
+
+            <div>
+              <h3><li>计时器（Timer）</li></h3><br/>
+              <ul>
+                <li>Timer是一个计时器。在Quark中用来驱动显示对象列表的更新和渲染。</li>
+                <li>Timer通过 addListener() 方法来注册侦听器(侦听器需实现 step() 方法)。</li>
+              </ul>
+            </div>
+            <br>
+
+            <div>
+              <p>显示对象列表、上下文、计时器三者分工合作，共同组成了Quark Base的架构。</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p style="text-align:center;">&copy; QuarkJS Dev-Team 2012</p>
+      </footer>
+
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/prettify.js"></script>
+
+  </body>
+</html>

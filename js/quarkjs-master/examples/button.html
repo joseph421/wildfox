@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1, maximum-scale=1" />
+<title>Quark Framework Example - Button</title>
+
+<style type="text/css">
+body{margin:0;padding:0;font-size:12px;background-color:#eee;}
+</style>
+
+<script type="text/javascript" src="../js/quark.base-1.0.0.js"></script>
+
+</head>
+
+<body>
+
+<div id="container" style="position:absolute;left:0;top:0;width:480px;height:320px;background:#fff;"></div>
+<div id="fps" style="position:absolute;left:0;top:0;"></div>
+<img id="btns" src="images/btns.png" style="display:none;" />
+
+<script type="text/javascript">
+
+window.onload = init;
+
+var timer, container, params, context, events, stage;
+
+function init()
+{
+	container = Q.getDOM("container");
+	events = Q.supportTouch ? ["touchstart","touchmove","touchend"] : ["mousedown","mousemove","mouseup", "mouseout"];
+	
+	params = Q.getUrlParams();
+	if(params.mode == undefined) params.mode = 2;
+
+	if(params.mode == 1)
+	{
+		var canvas = Quark.createDOM("canvas", {width:480, height:320, style:{position:"absolute",backgroundColor:"#eee"}});
+		container.appendChild(canvas);
+		context = new Quark.CanvasContext({canvas:canvas});
+	}else
+	{
+		context = new Q.DOMContext({canvas:container});
+	}
+	
+	stage = new Q.Stage({context:context, width:480, height:320, update:function()
+	{
+		frames++;
+	}});
+
+	var btn1 = new Q.Button({id:"btn1", image:Q.getDOM("btns"), x:50, y:50, width:64, height:64,
+	up:{rect:[0,0,64,64]},
+	over:{rect:[64,0,64,64]},
+	down:{rect:[128,0,64,64]},
+	disabled:{rect:[192,0,64,64]}
+	});
+
+	var btn2 = new Q.Button({id:"btn2", image:Q.getDOM("btns"), x:200, y:50, width:64, height:64,
+	up:{rect:[0,64,64,64]},
+	over:{rect:[64,64,64,64]},
+	down:{rect:[128,64,64,64]},
+	disabled:{rect:[192,64,64,64]}
+	});
+
+	stage.addChild(btn1, btn2);
+
+	var em = new Q.EventManager();
+	em.registerStage(stage, events, true, true);
+	
+	timer = new Q.Timer(1000/60);
+	timer.addListener(stage);
+	timer.start();
+}
+
+var frames = 0, fpsContainer = Quark.getDOM("fps");
+setInterval(function()
+{
+	fpsContainer.innerHTML = "FPS:" + frames;
+	frames = 0;
+}, 1000);
+
+</script>
+
+</body>
+</html>

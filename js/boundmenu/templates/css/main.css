@@ -1,5 +1,5 @@
 body{background:#eee;font-family:Verdana, Helvetica, Arial, sans-serif;margin:0;padding:0}
-.examples{background:#FFF;width:800px;font-size:80%;border:1px #000 solid;margin:3.5em auto 2em;padding:1em 2em 2em}
+.examples{background:#FFF;width:800px;font-size:120%;border:1px #000 solid;margin:3.5em auto 2em;padding:1em 2em 2em}
 
 /* ================================================================ 
 This copyright notice must be kept untouched in the stylesheet at 
@@ -11,9 +11,10 @@ Copyright (c) 2005-2009 Stu Nicholls. All rights reserved.
 This stylesheet and the associated (x)html may be modified in any 
 way to fit your requirements.
 =================================================================== */
-
+#menu {width:750px; height:531px; text-align:center; margin:0 auto;}
+/*
 #menu {width:750px; height:531px; background:url(../images/snowboard.jpg); text-align:center; margin:0 auto;}
-
+*/
 #menu ul {margin:0; padding:0; list-style:none; white-space:nowrap; text-align:left; background:#ccccd0; border:1px solid #333; border-color:#eee #555 #222 #fff;}
 #menu ul {display:inline-block;} 
 

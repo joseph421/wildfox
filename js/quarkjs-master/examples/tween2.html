@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1, maximum-scale=1" />
+<title>Quark Framework Example - Tween</title>
+
+<style type="text/css">
+body{margin:0;padding:0;font-size:12px;background-color:#eee;}
+</style>
+
+<script type="text/javascript" src="../js/quark.base-1.0.0.js"></script>
+
+</head>
+
+<body>
+
+<div id="container" style="position:absolute;left:0;top:0;width:480px;height:320px;background:#fff;"></div>
+<div id="fps" style="position:absolute;left:0;top:0;"></div>
+<img id="girl" src="images/girl.png" style="display:none;" />
+<img id="boy" src="images/boy.png" style="display:none;" />
+<img id="turn" src="images/turn.png" style="display:none;" />
+
+<script type="text/javascript">
+
+window.onload = init;
+
+var timer, container, context, params, width, height, fps;
+
+function init()
+{	
+	container = Q.getDOM("container");
+	
+	params = Quark.getUrlParams();
+	if(params.mode == undefined) params.mode = 2;
+
+	width = 480;
+	height = 320;
+	fps = 60;
+
+	if(params.mode == 1)
+	{
+		var canvas = Quark.createDOM("canvas", {width:width, height:height, style:{position:"absolute",backgroundColor:"#fff"}});		
+		container.appendChild(canvas);
+		context = new Quark.CanvasContext({canvas:canvas});		
+	}else
+	{
+		context = new Quark.DOMContext({canvas:container});
+	}
+	
+	var stage = new Q.Stage({context:context, width:width, height:height, update:function()
+	{
+		frames++;
+	}});
+
+	var turn = new Q.Bitmap({id:'turn', image:Q.getDOM('turn'), alpha:0});
+	turn.x = -turn.width;
+	turn.y = stage.height - turn.height >> 1;
+	stage.addChild(turn);
+
+	Q.Tween.to(turn, {x:stage.width - turn.width >> 1, alpha:1}, {time:300, onComplete:function(tween)
+	{
+		Q.Tween.to(turn, {x:stage.width, alpha:0}, {time:300, delay:500, onComplete:function()
+		{
+			trace("tween end");
+		}});
+	}});
+	
+	timer = new Q.Timer(fps);
+	timer.addListener(stage);
+	timer.addListener(Q.Tween);
+	timer.start();
+}
+
+var frames = 0, fpsContainer = Quark.getDOM("fps");
+setInterval(function()
+{
+	fpsContainer.innerHTML = "FPS:" + frames;
+	frames = 0;
+}, 1000);
+
+</script>
+
+</body>
+</html>

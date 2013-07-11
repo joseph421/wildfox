@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QuarkJS - An HTML5 Game Framework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="quarkjs, a html5 game framework.">
+    <meta name="author" content="flashlizi">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body onload="prettyPrint();">
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">QuarkJS - An HTML5 Game Framework</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="index.html">首页</a></li>
+              <li><a href="http://github.com/quark-dev-team/quarkjs" target="_blank">源码下载</a></li>
+              <li><a href="api/index.html">API文档</a></li>
+              <li class="active"><a href="#">使用指南</a></li>
+              <li><a href="demo.html">作品演示</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">使用指南</li>
+              <li><a href="tutorial.html">快速开始 - Getting Started</a></li>
+              <li><a href="tutorial_infrastructure.html">基础架构 - Infrastructure</a></li>
+              <li><a href="tutorial_context.html">上下文 - Context</a></li>
+              <li><a href="tutorial_displayobject.html">显示对象 - DisplayObject</a></li>
+              <li class="active"><a href="#">事件处理 - Handling Events</a></li>
+
+              <li class="nav-header">实例分析</li>
+              <li><a href="tutorial_squirrel.html">跳跃的小松鼠</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="span9">
+          <div class="page-header">
+            <h1>事件处理</h1>
+          </div>
+
+          <div>
+            <div>
+
+            <div>
+              <h3><li>使用 Quark.EventManager 注册舞台事件</li></h3><br/>
+              <pre>var em = new Q.EventManager();
+var events = Q.supportTouch ? ["touchstart", "touchmove", "touchend"] : ["mousedown", "mousemove", "mouseup"];
+em.registerStage(stage, events);</pre>
+            </div>
+            <br>
+
+            <div>
+              <h3><li>为显示对象编写事件侦听函数</li></h3><br/>
+              <pre>obj.addEventListener("touchend", function(e)
+{
+  //do something
+});</pre>
+              <p>事件侦听函数会接收一个事件参数e，它包含e.eventX，e.eventY，e.eventTarget，e.lastEventTarget等属性。</p>
+            </div>
+            <br>
+
+            <div>
+              <h3><li>删除事件侦听</li></h3><br/>
+              <pre>//删除指定事件类型的指定侦听函数
+obj.removeEventListener("touchend", touchendHandler);
+
+//删除指定事件类型的所有侦听函数
+obj.removeEventListener("touchend");</pre>
+            </div>
+            <br>
+
+            <div>
+              <h3><li>删除舞台事件</li></h3><br/>
+              <pre>em.unregisterStage(stage, events);</pre>
+            </div>
+            <br>
+
+            <div>
+              <h3><li>一些方法的简写</li></h3><br/>
+              <pre>obj.on = obj.addEventListener
+obj.un = obj.removeEventListener
+obj.fire = obj.dispatchEvent</pre>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p style="text-align:center;">&copy; QuarkJS Dev-Team 2012</p>
+      </footer>
+
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/prettify.js"></script>
+
+  </body>
+</html>
