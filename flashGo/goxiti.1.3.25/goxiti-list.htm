@@ -1,0 +1,248 @@
+<html>
+
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>围棋习题FlashGoProblem使用示例</title>
+</head>
+
+<body style="text-align:center;" onload="init()" >
+
+<SCRIPT LANGUAGE="JavaScript">
+    var xitiCurNumber = 0;
+    var xitiURLBase = "";
+    var xitiURLList = [ "./sgf/互相叫吃10.sgf", "./sgf/互相叫吃11.sgf","./sgf/xiti1.sgf","./sgf/2014.sgf","./sgf/2015.sgf","./sgf/Go-00058.sgf"]; 
+	var sndURLList = ["good0.mp3", "good1.mp3", "good2.mp3","good3.mp3","good4.mp3","good5.mp3"]; 
+	function init(){ 
+		var ctrl=document.getElementById("mySwf"); 
+		xitiIndex.innerHTML="第1题";
+		ctrl.focus(); 
+	}
+    function gibo_load(index){
+	//先清除列表中前一题的正解图内容
+	    var answerListSelect = document.getElementById("area");
+	    answerListSelect.options.length=1;//保留第一个
+        var sgfurl = xitiURLList[index];
+		var sndurl = sndURLList[index];
+        mySwf.NewGoExercises(sgfurl);
+		//mySwf.NewGoExercisesSound(sgfurl,sndurl);//这个函数可以在装载棋谱的时候播放一段音频解说
+
+		var IndexID = index + 1;
+		xitiIndex.innerHTML="第"+IndexID.toString()+ "题";
+    }
+    function OnNextXiti() {
+        document.getElementById("btnPrvXiti").removeAttribute("disabled");
+        xitiCurNumber++;
+        if (xitiCurNumber >= 5) {
+            document.getElementById("btnNextXiti").disabled = true;
+        }
+		//xitiIndex.innerHTML="第"+xitiID.toString()+ "题";
+        gibo_load(xitiCurNumber);
+    }
+    function OnPrvXiti() {
+        document.getElementById("btnNextXiti").removeAttribute("disabled");
+
+       xitiCurNumber--;
+       if (xitiCurNumber <= 0) {
+           document.getElementById("btnPrvXiti").disabled = true;
+       }
+        gibo_load(xitiCurNumber);
+    }
+	//返回上一步
+    function OnStepBack() {
+       mySwf.JSStepBack();
+    }
+	//重新做题
+    function OnReset() {
+        mySwf.ResetCurrentExercises();
+    }
+	//习题模式
+    function OnExerciseMode() {
+        mySwf.EnterExerciseMode();
+    }
+	//研究模式
+    function OnResearchMode() {
+        mySwf.EnterResearchMode();
+    }
+	//切换是否显示棋子上的数字
+	function OnShowHideDigit() {
+	  	mySwf.ShowHideDigit();
+	}
+	//在显示/隐藏手数态变化时被调用，1-显示手数 0-不显示手数
+	function  OnDigitStatusChanged(bShow)
+	{
+	  	if(bShow)
+	  	{
+	  		btnShowNumber.value = "隐藏手数";
+	  	}	
+	  	else
+	  	{
+	  		btnShowNumber.value = "显示手数";
+	  	}
+	}
+	//切换是否打开落子声音
+	function OnPlaySoundOnOff() {
+	  	mySwf.PlaySoundOnOff();
+	}
+	//落子声音被打开/关闭是被调用 bPlay = 1-声音打开 0-声音关闭
+	function  OnPlaySoundStatusChanged(bPlay) 
+	{
+	  	if(bPlay)
+	  	{
+	  		btnMute.value = "关闭落子声音";
+	  	}	
+	  	else
+	  	{
+	  		btnMute.value = "打开落子声音";
+	  	}
+	}
+    //将新内容添加到listbox中
+    function OnUserPlayMove(posX,posY,color) {
+        var list_selectedList = document.getElementById("selectedList");
+        var oOption = document.createElement("option");
+        var xitiID = xitiCurNumber+1;
+        var sValue = "第"+xitiID.toString()+ "题,X:"+ posX.toString() +",Y:"+ posY.toString() + ",Color:"+color.toString();
+        oOption.appendChild(document.createTextNode(sValue));
+        oOption.setAttribute("value", sValue);
+        list_selectedList.appendChild(oOption);
+    }
+    //解题结束
+    function OnUserPlayResult(res) {
+        var list_selectedList = document.getElementById("selectedList");
+        var oOption = document.createElement("option");
+        var xitiID = xitiCurNumber+1;
+		var sValue;
+		if(res==0)
+			sValue = "第"+xitiID.toString()+ "题回答错误";
+		else
+			sValue = "第"+xitiID.toString()+ "题回答正确";
+        oOption.appendChild(document.createTextNode(sValue));
+        oOption.setAttribute("value", sValue);
+        list_selectedList.appendChild(oOption);
+    }
+ //收到解说
+    function OnCommentString(res) {
+		commentNode.innerHTML=res;
+    }
+
+ //检索到新正解图
+     function OnReceiveAnswer(strName) {
+		 var answerListSelect = document.getElementById("area");
+	     var newOption=document.createElement("option");
+	     newOption.setAttribute("value",strName);
+	     newOption.appendChild(document.createTextNode(strName));
+	     answerListSelect.appendChild(newOption);
+    }
+  //下拉框中选择了一个正解图，index从1开始
+   function OnShowAnswerGraph() {
+          var answerListSelect = document.getElementById("area");
+		  var index=answerListSelect.selectedIndex;
+		  mySwf.ShowAnswerGraph(index);
+    }
+    
+  //点击开始/停止演示正解按钮  
+    function OnAutoAnimate() {
+        var answerListSelect = document.getElementById("area");
+		var index=answerListSelect.selectedIndex;
+		if(index>0)
+    		mySwf.SolutionAnimateStartStop();
+    }
+    
+  //收到开始自动演示正解图的回调消息
+	function  OnSolutionAnimateStart(){
+		btnAutoAnimate.value = "停止演示正解";
+		//btnAutoAnimate.src = "stop.bmp";
+	}
+  //收到停止自动演示正解图的回调消息
+	function  OnSolutionAnimateStop() {
+		btnAutoAnimate.value = "自动演示正解";
+		//btnAutoAnimate.src = "start.bmp";
+	}
+  //打开新习题后被调用，确定习题是白先行还是黑先行
+	function  OnFirstColor(color){
+		if(color == 1)
+			document.getElementById("firstColor").innerHTML = "白先行";
+		else
+			document.getElementById("firstColor").innerHTML = "黑先行";
+	}
+
+    
+
+</SCRIPT>
+
+
+    <table width="1009">
+        <tr>
+            <td width="800">
+                <div style="position: relative; text-align: center; width=700; height=516;">
+                    <object width="100%" height="100%" align="middle" id="mySwf" type="application/x-shockwave-flash"
+                        classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+                        <param name="movie" value="goxiti.swf?ver=1.01" />
+                        <param name="FlashVars" value="frame=1&ruler=0&script=1&sgfurl=./sgf/7S8H01.sgf" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#869ca7" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                    </object>
+                </div>
+            </td>
+            <td width="200">
+            	<div id="firstColor">白先行</div>
+                <div>
+                    <input type="button" value="上一题" id="btnPrvXiti" disabled="true" onclick="OnPrvXiti();">
+                </div>
+                <div>
+                    <input type="button" value="下一题" id="btnNextXiti" onclick="OnNextXiti();">
+                </div>
+                <div>
+                    <input type="button" value="研究模式" id="btnResearchMode"  onclick="OnResearchMode();">
+                </div>
+                <div>
+                    <input type="button" value="习题模式" id="btnExerciseMode" onclick="OnExerciseMode();">
+                </div>
+                 <div>
+                    <input type="button" value="返回上步" id="btnStepBacki" onclick="OnStepBack();">
+                </div>
+                <div>
+                    <input type="button" value="重新做题" id="btnReset" onclick="OnReset();">
+                </div>
+                <div>
+                    <input type="button" value="显示手数" id="btnShowNumber" onclick="OnShowHideDigit();">
+                </div>
+                <div>
+                    <input type="button" value="关闭落子声音" id="btnMute" onclick="OnPlaySoundOnOff();">
+                </div>
+                <br>
+				<div id="context">
+				   <select id="area" style="width:100px" onchange="OnShowAnswerGraph()"><option value="0">查看正解图</option>
+				   </select>
+				</div>
+                <div>
+                    <input type="button" value="自动演示正解" id="btnAutoAnimate" src="start.bmp" onclick="OnAutoAnimate();">
+                    <!--input type="image" value="自动演示正解" id="btnAutoAnimate" src="start.bmp" onclick="OnAutoAnimate();"-->
+
+                </div>
+                <div id="divSelectedList" style="border-right: gray 1px solid; border-top: gray 1px solid;
+                    border-left: gray 0px solid; width: 200px; border-bottom: gray 1px solid; height: 300px;
+                    margin: 0px; padding: 0px; overflow: auto;">
+                    <select id="selectedList" size="20" style="width: 100%; height: 100%;" multiple="multiple">
+                    </select>
+                </div>
+				<div id="commentNode"  style="border-right: gray 1px solid; border-top: gray 1px solid;
+                    border-left: gray 1px solid; width: 200px; border-bottom: gray 1px solid; height: 100px;
+                    margin: 0px; padding: 0px; overflow: auto;">
+				</div>
+				<div id="xitiIndex"  style="border-right: 0px; border-top: 0px ;
+                    border-left: 0px ;  border-bottom: 0px ;width: 200px; height: 100px;text-align:center;vertical-align:middle; font-size: 25px;
+					font-weight:bold;font-family:"黑体";
+                    margin: 0px; padding: 0px; overflow: auto;">
+				</div>
+           </td>
+        </tr>
+    </table>
+    <br/>
+
+
+</body>
+
+</html>

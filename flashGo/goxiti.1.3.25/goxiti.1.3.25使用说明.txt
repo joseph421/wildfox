@@ -1,0 +1,154 @@
+网弈习题(FlashGoProblem)是一个可以在网页做围棋习题练习的flash。
+
+一、FlashGoProblem包括以下文件和目录：
+1. goxiti.swf                 --“网弈习题”flash文件
+2. \sgf                       -- 存放示例的sgf习题的文件夹
+3. \sound                     -- 存放声音文件的文件夹(文件夹名称可用参数snddir设置)
+4. \emo                       -- 存放表情动画的文件夹
+5. goxiti-embed.htm           -- 通过<embed>标签直接使用FlashGoProblem的示例htm页面
+6. goxiti-list.htm     	      -- JS与FlashGoProblem交互的示例htm页面
+7. goxiti-list-solvetime.htm  -- 设置解题时间限制的示例htm页面
+8. framework_3.0.0.477.swz、framework_3.0.0.477.swf均为Flex的RSL库文件，需与goview.swf放置在同一路径下，浏览器在第一次打开页面时会自动下载该文件，且仅在第一次访问时进行下载。
+
+二、goxiti.swf的参数设置：
+
+目前有28个参数：
+1. sgfurl    --  棋谱文件的URL地址，可以是相对地址。
+2. sgftext   --  可以在html代码中用该参数直接嵌入SGF棋谱字符串
+3. time      --  设置自动演示正解的时间间隔，单位是ms，缺省值是1000，即1S。
+4. skin      --  定义皮肤名称，缺省是蓝色基调，目前支持另外一种皮肤，名称是“xueyan”，配色与学研网搭配
+5. lang      --  定义语音，缺省是简体中文，"lang=zh_CN"简体中文，"lang=zh_TW"繁体中文，"lang=en_US"英文，"lang=ru_RU"俄文
+6. encoding  --  定义sgf棋谱文件的编码格式，如:"gb2312"、"utf-8"、"big5"等
+7. mute      --  控制初始声音是否静音。"mute=1"即为静音。初始声音为静音状态
+8. script    --  控制是否允许页面的javascript调用goxiti.swf的函数。"script=1"即允许调用。缺省值是0。
+9. copy      --  是否允许拷贝棋谱的标志。"copy=0"即不允许在右键菜单中选择“复制棋谱到剪贴板”。缺省值是1。
+10. snddir   --  设置声音文件的路径。例如snddir=sound-en，则声音文件在sound-en目录下寻找。如不填此参数，则路径缺省值为sound。
+11.sndok     --  设置解题成功后随机播放的声音文件的个数，如不写此参数，缺省值是1。
+12.sndfail   --  设置解题失败后随机播放的声音文件的个数，如不写此参数，缺省值是1。
+13.emook     --  设置解题成功后随机播放的swf动画的个数，如不写此参数，缺省值是1。
+14.emofail   --  设置解题失败后随机播放的swf动画的个数，如不写此参数，缺省值是1。
+15.size      --  定义棋盘的大小，size=19则是19X19的棋盘，size=13则是13X13的棋盘。注意：如果SGF棋谱中用"SZ"定义了棋盘大小，则以SGF棋谱中的棋盘大小为准。
+16.home      --  可设置LOGO图标的链接地址
+17.copy      --  设置是否允许拷贝棋谱文本到剪贴板。copy=0即禁止拷贝棋谱文本到剪贴板。缺省情况下允许拷贝。注意：copy参数只能放在FlashVar的最前面位置，否则Flash读取参数可能会出错。
+18.solvetime -- 设置解题的时间限制，单位是秒，到时间就不能解题了。如等于0，则不限时间。
+19.answer    -- 当answer=0时，不显示左侧查看正解的列表和按钮，从而无法看到正解图。且同时禁止右键菜单的“复制棋谱到剪贴板”的菜单项。
+20.autoplay  -- 当autoplay=0时，在习题模式下，计算机不自动应对下一步，与研究模式不同，此时电脑会提示你是否走的正确。
+21.commenturl-- 指定解说声音文件的路径。在题目装载时可自动播放解说声音，点击鼠标落子即停止播放解说声音。增加JS函数接口NewGoExercisesSound，可动态加载习题棋谱及解说语音。
+22.frame     -- 控制界面是否显示棋盘外的窗口元素，如frame=0即只显示棋盘，缺省值=1。
+23.bkcolor   -- 设置背景色，如bkcolor=#0000ff即设置为蓝色背景（不是棋盘背景，是指flash背景）
+24.bkimg     -- 设置背景图片,需指定图片的url，可用相对路径
+25.ruler     -- 设置是否显示棋谱两边的坐标文字标注，0:不显示；1:显示。缺省值为1。
+26.emowidth  -- 设置播放的swf动画的宽度，缺省值是38。swf动画在棋盘中间显示。该参数仅在frame=0时有效。
+27.emoheight -- 设置播放的swf动画的高度，缺省值是38。swf动画在棋盘中间显示。该参数仅在frame=0时有效。
+28.clip      -- 标记是否自动裁切棋盘，缺省值是1，即自动裁切。
+
+三、与JS交互。（注意要：必须设置参数script=1才能进行与JS的交互）
+1.通过JS脚本动态装载棋谱
+ 1) NewGoExercises函数接口，实现动态装载棋谱的功能。JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+     function load_gibo(sgfurl){
+ 		mySwf.NewGoExercises(sgfurl);
+     }
+ </SCRIPT>
+ 2) NewGoExercisesSound函数接口，实现动态装载棋谱及解说语音的功能。JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+     function load_gibo(sgfurl,sndurl){
+ 		mySwf.NewGoExercisesSound(sgfurl,sndurl);
+     }
+ </SCRIPT>
+
+2.通过JS获取回调信息
+(1) 解题过程中flash会调用JS的以下2个函数：
+function OnUserPlayMove(posX,posY,color) -- 棋盘落子，posX、posY为落子坐标，color为棋子颜色
+function OnUserPlayResult(res)           -- 解题结束，res=1：找到正解，res=0：解题错误
+(2) 打开棋谱后收到的回调消息
+function OnReceiveAnswer(strName)    --   检索到新正解图, strName-正解图名称
+(3) 导航到某一步棋，该手棋如果有解说文本，则会收到回调消息
+function  OnCommentString(strComment)    --  收到解说文本, strComment-解说文本
+(4)  开始自动演示正解图的回调消息
+function  OnSolutionAnimateStart()
+(5) 停止自动演示正解图的回调消息
+function  OnSolutionAnimateStop() 
+(6) 打开新习题后被调用，确定习题是白先行还是黑先行
+function  OnFirstColor(color)  --  先行棋子的颜色 1-白色，其它值-黑色
+(7) 落子声音被打开/关闭是被调用，通知页面当前落子声音的状态
+function  OnPlaySoundStatusChanged(bPlay)  --  先行棋子的颜色 1-声音打开 0-声音关闭
+(7) 在显示/隐藏手数态变化时被调用，通知页面状态改变
+function  OnDigitStatusChanged(bShow)  --  1-显示手数 0-不显示手数
+
+3.解题操作控制
+(1) JSStepBack函数接口，返回上一步。
+JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+   function OnStepBack() {
+          mySwf.JSStepBack();
+    }
+ </SCRIPT>
+(2) ResetCurrentExercises函数接口，重新做题。
+JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+   function OnReset() {
+          mySwf.ResetCurrentExercises();
+    }
+ </SCRIPT>
+(3) EnterExerciseMode函数接口，进入习题模式。
+JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+   function OnEnterExerciseMode() {
+          mySwf.EnterExerciseMode();
+    }
+ </SCRIPT>'
+(4) EnterResearchMode函数接口，进入研究模式。
+JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+   function OnEnterResearchMode() {
+          mySwf.EnterResearchMode();
+    }
+ </SCRIPT>
+(5)ShowAnswerGraph函数接口，显示正解图，参数：正解图的索引值(索引从1开始)。
+JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+   function OnShowAnswerGraph() {
+          mySwf.ShowAnswerGraph(1);
+    }
+ </SCRIPT>
+(6)SolutionAnimateStartStop函数接口，开始/停止自动演示正解图，参数：无。自动根据当前状态执行“开始”或“停止”自动演示正解图操作。执行该函数后会收到回调OnSolutionAnimateStart或OnSolutionAnimateStop来标志当前的实际状态。
+JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+  function OnAutoAnimate() {
+    	mySwf.SolutionAnimateStartStop();
+    }
+ </SCRIPT>
+(7) ShowHideDigit 函数接口，显示/隐藏手数
+JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+  function OnShowHideDigit() {
+    	mySwf.ShowHideDigit();
+    }
+ </SCRIPT>
+(8) PlaySoundOnOff 函数接口，打开/关闭落子声音
+JS调用示例如下：
+ <SCRIPT LANGUAGE="JavaScript">
+  function OnPlaySoundOnOff() {
+    	mySwf.PlaySoundOnOff();
+    }
+ </SCRIPT>
+
+具体可参见goxiti-list.htm。
+注意：调用NewGoExercises时，swf只能用<object>标签嵌入，用<Embed>标签嵌入好像有问题。
+
+四、自定义语言提示
+1.在解题成功或失败后播放声音文件，声音文件URL在”\sound”(可用参数snddir设置)相对路径下，解题成功的声音文件命名规则是是“good*.mp3”，其中“*”是文件编号，如解题成功是希望在3个待选声音文件中随机播放，则把这3个文件命名为“good0.mp3”、“good1.mp3”、“good2.mp3”。解题失败的声音文件命名规则是是“fail*.mp3”，规则同上。
+2.用参数sndok设置解题成功后随机播放的声音文件的个数，如不写此参数，缺省值是1。
+3.用参数sndfail设置解题失败后随机播放的声音文件的个数，如不写此参数，缺省值是1。
+4.用参数snddir设置声音文件的路径。
+
+五、自定义动态表情
+1.在解题成功或失败后播放swf动画，swf动画文件URL在”\emo”相对路径下。缺省的swf动画文件名为“normal.swf”。解题成功的swf动画文件命名规则是是“good*.swf”，其中“*”是文件编号，如解题成功是希望在3个待选swf动画文件中随机播放，则把这3个文件命名为“good0.swf”、“good1.swf”、“good2.swf”。解题失败的swf动画文件命名规则是是“fail*. swf”，规则同上。
+2.用参数emook设置解题成功后随机播放的swf动画的个数，如不写此参数，缺省值是1。
+3.用参数emofail设置解题失败后随机播放的swf动画的个数，如不写此参数，缺省值是1。
+
+六、注意：
+由于Flash安全性设置的问题，swf文件和棋谱文件需要在同一个域中才能正常使用，也就是放在同一个网站下。举个例子，如果swf文件上传到http://www.siteA.com，棋谱文件也必须在这个域名下，即棋谱URL为：http://www.siteA.com/.../*.sgf
+如果swf和棋谱文件没有在一个域下，则需要在网站的根路径放置一个域策略文件：crossdomain.xml，具体用法可以去百度一下。
+

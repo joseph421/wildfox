@@ -1,0 +1,46 @@
+
+一、FlashGoView包括以下文件：
+1. goview.swf          --  flash文件
+2. goview-object.htm   --  通过<object>标签直接使用goview的Demo
+3. goview-embed.htm    --  通过<embed>标签直接使用goview的Demo
+4. goview_js_load.htm  --  通过调用goview.swf的对外开放的JS脚本接口实现在网页动态装载棋谱
+5. 13gl.sgf            --  测试棋谱（新浪SGF格式）
+6. yuchqi19.sgf        --  测试棋谱（标准SGF格式）
+7. utf8.sgf            --  测试棋谱（utf-8编码）
+8. framework_3.0.0.477.swz、framework_3.0.0.477.swf均为Flex的RSL库文件，需与goview.swf放置在同一路径下，浏览器在第一次打开页面时会自动下载该文件，且仅在第一次访问时进行下载。
+
+二、goview.swf的参数设置：
+目前有14个参数：
+1. sgfurl   --  棋谱文件的URL地址，可以是相对地址。
+2. comment  --  是否显示右侧的解说窗口，1-显示 0-不显示
+3. sgftext  --  可以在html代码中用该参数直接嵌入SGF棋谱字符串
+4. size     --  定义棋盘的大小，size=19则是19X19的棋盘，size=13则是13X13的棋盘。注意：如果SGF棋谱中用"SZ"定义了棋盘大小，则以SGF棋谱中的棋盘大小为准。
+5. skin     --  定义皮肤名称，目前此功能可以更换右上角LOGO图片，LOGO图片的命名格式为 logo_XXXX.png，其中“xxxx”即为skin参数设置的名称（如设置skin=xueyan，则图片名称为logo_xueyan.png）。图片必须是png格式的，LOGO图片文件需放置在“./skin”目录下。
+6. lang     --  定义语音，缺省是简体中文，"lang=zh_CN"简体中文，"lang=zh_TW"繁体中文，"lang=en_US"英文，"lang=ru_RU"俄文
+7. encoding --  定义sgf棋谱文件的编码格式，如:"gb2312"、"utf-8"、"big5"等
+8. panel    --  定义右侧解说窗口的宽度，缺省值是150
+9. mute     --  控制初始声音是否静音。"mute=1"：初始声音为静音状态
+10. autoend  -- "autoend=1"， 棋谱装载后自动导航到最后一手棋
+11.script   --  控制是否允许页面的javascript调用goview.swf的函数。"script=1"即允许调用
+12.renju    --  为五子棋设置的参数，renju=1表示棋谱是五子棋棋谱，此时不做提子和禁入点判断
+13.live     --  直播棋谱参数，Live>0，表示当前的棋谱是直播棋谱，浏览器会定时自动重新去获取棋谱文件，此时发布者只需要定时更新发布的棋谱文件，即可实现棋谱直播功能。live的值是更新的时间间隔，单位为秒。
+14.number   --  缺省情况下，打开棋谱时不显示棋谱的手数。如果number=1,表示打开棋谱时自动显示棋谱的手数,但JS切换棋谱时不受此参数影响，而是根据当前用户的“手数是否显示”设置来决定。
+15.home     --  可设置LOGO图标的链接地址
+16.copy     --  设置是否允许拷贝棋谱文本到剪贴板。copy=0即禁止拷贝棋谱文本到剪贴板。缺省情况下允许拷贝。注意：copy参数只能放在FlashVar的最前面位置，否则Flash读取参数可能会出错。
+
+三、通过JS脚本动态装载棋谱
+goview.swf对外开放ShowNewFile函数接口，实现动态装载棋谱的功能。JS调用示例如下：
+<SCRIPT LANGUAGE="JavaScript">
+    function load_gibo(path){
+		mySwf.ShowNewFile(path);
+		mySwf2.ShowNewFile(path);
+    }
+</SCRIPT>
+具体可参见goview_js_load.htm。
+注意：调用ShowNewFile时，swf只能用<object>标签嵌入，用<Embed>标签嵌入好像有问题。
+
+四、注意：
+由于Flash安全性设置的问题，swf文件和棋谱文件需要在同一个域中才能正常使用，也就是放在同一个网站下。举个例子，如果swf文件上传到http://www.siteA.com，棋谱文件也必须在这个域名下，即棋谱URL为：http://www.siteA.com/.../*.sgf
+如果swf和棋谱文件没有在一个域下，则需要在网站的根路径放置一个域策略文件：crossdomain.xml，具体用法可以去百度一下。
+
+

@@ -1,0 +1,110 @@
+<html>
+
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>围棋习题FlashGoProblem使用示例</title>
+</head>
+
+<body style="text-align:center;" onload="init()" >
+
+<SCRIPT LANGUAGE="JavaScript">
+    var xitiCurNumber = 0;
+    var xitiURLBase = "";
+    var xitiURLList = ["./sgf/xiti1.sgf", "./sgf/xiti2.sgf", "./sgf/7S8H01.sgf","./sgf/2014.sgf","./sgf/2015.sgf","./sgf/Go-00058.sgf"]; 
+
+	function init(){ 
+		var ctrl=document.getElementById("mySwf"); 
+		ctrl.focus(); 
+	}
+    function gibo_load(index){
+        var sgfurl = xitiURLList[index];
+        mySwf.NewGoExercises(sgfurl);
+    }
+    function OnNextXiti() {
+        document.getElementById("btnPrvXiti").removeAttribute("disabled");
+        xitiCurNumber++;
+        if (xitiCurNumber >= 5) {
+            document.getElementById("btnNextXiti").disabled = true;
+        }
+        gibo_load(xitiCurNumber);
+    }
+    function OnPrvXiti() {
+        document.getElementById("btnNextXiti").removeAttribute("disabled");
+
+       xitiCurNumber--;
+       if (xitiCurNumber <= 0) {
+           document.getElementById("btnPrvXiti").disabled = true;
+       }
+        gibo_load(xitiCurNumber);
+    }
+
+    //将新内容添加到listbox中
+    function OnUserPlayMove(posX,posY,color) {
+        var list_selectedList = document.getElementById("selectedList");
+        var oOption = document.createElement("option");
+        var xitiID = xitiCurNumber+1;
+        var sValue = "第"+xitiID.toString()+ "题,X:"+ posX.toString() +",Y:"+ posY.toString() + ",Color:"+color.toString();
+        oOption.appendChild(document.createTextNode(sValue));
+        oOption.setAttribute("value", sValue);
+        list_selectedList.appendChild(oOption);
+    }
+    //解题结束
+    function OnUserPlayResult(res) {
+        var list_selectedList = document.getElementById("selectedList");
+        var oOption = document.createElement("option");
+        var xitiID = xitiCurNumber+1;
+		var sValue;
+		if(res==0)
+			sValue = "第"+xitiID.toString()+ "题回答错误";
+		else if(res==1)
+			sValue = "第"+xitiID.toString()+ "题回答正确";
+		else if(res==-1)
+			sValue = "第"+xitiID.toString()+ "题超时";
+        oOption.appendChild(document.createTextNode(sValue));
+        oOption.setAttribute("value", sValue);
+        list_selectedList.appendChild(oOption);
+    }
+
+</SCRIPT>
+
+
+    <table width="809">
+        <tr>
+            <td width="600">
+                <div style="position: relative; text-align: center; width=621; height=516;">
+                    <object width="100%" height="100%" align="middle" id="mySwf" type="application/x-shockwave-flash"
+                        classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000">
+                        <param name="movie" value="goxiti.swf?ver=1.3.10" />
+                        <param name="FlashVars" value="script=1&solvetime=20&answer=0&home=http://www.baidu.com&sgfurl=./sgf/xiti1.sgf" />
+                        <param name="quality" value="high" />
+                        <param name="bgcolor" value="#869ca7" />
+                        <param name="allowScriptAccess" value="sameDomain" />
+                    </object>
+                </div>
+            </td>
+            <td width="200">
+                <div>
+                    <input type="button" value="上一题" id="btnPrvXiti" disabled="true" onclick="OnPrvXiti();">
+                </div>
+                <div>
+                    <input type="button" value="下一题" id="btnNextXiti" onclick="OnNextXiti();">
+                </div>
+                <div>
+                </div>
+                <div id="divSelectedList" style="border-right: gray 1px solid; border-top: gray 1px solid;
+                    border-left: gray 0px solid; width: 200px; border-bottom: gray 1px solid; height: 300px;
+                    margin: 0px; padding: 0px; overflow: auto;">
+                    <select id="selectedList" size="20" style="width: 100%; height: 100%;" multiple="multiple">
+                    </select>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br/>
+
+
+</body>
+
+</html>

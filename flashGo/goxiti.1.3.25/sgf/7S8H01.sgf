@@ -1,0 +1,12 @@
+(;AB[ra][qb][qc][qe][qd][qf][qg][qh][qi][ri]AW[rg][rf][re][rd][rc][rb][rh]AP[MultiGo:3.9.4]
+SZ[19]
+
+(;B[sb];W[sc]
+(;B[sh];W[sg];B[se]C[RIGHT])
+(;B[se];W[sh];B[sf]C[RIGHT]))
+(;B[se];W[sb];B[sd];W[sh];B[sf])
+(;B[sh];W[sg]
+(;B[sb];W[sc];B[se]C[RIGHT])
+(;B[se];W[sb];B[sd]C[RIGHT]))
+(;B[sd];W[sh])
+(;B[sf];W[sb]))

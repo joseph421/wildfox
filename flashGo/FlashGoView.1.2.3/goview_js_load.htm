@@ -1,0 +1,38 @@
+<html>
+
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>FlashGoView JS Load Demo</title>
+</head>
+
+<body style="text-align:center;">
+<SCRIPT LANGUAGE="JavaScript">
+	function init(){ 
+		var ctrl=document.getElementById("mySwf"); 
+		ctrl.focus(); 
+	}
+    function gibo_load(path){
+		mySwf.ShowNewFile(path);
+    }
+</SCRIPT>
+
+<a href="JavaScript:gibo_load('13gl.sgf');"><div align="center">第13届LG杯世界棋王战三番棋决赛第1局</div></a>
+<a href="JavaScript:gibo_load('yuchqi19.sgf');"><div align="center">御城棋十九连胜</div></a>
+
+<div style="position:relative;text-align:center;width=701; height=623;">
+	<object width="100%" height="100%" align="middle" id="mySwf" type="application/x-shockwave-flash" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" >
+		<param name="movie" value="goview.swf?ver=1.0" /> 
+		<param name="FlashVars" value="number=1&live=0&script=1&autoend=1&mute=0&sgfurl=13gl.sgf&comment=1" /> 
+		<param name="quality" value="high" /> 
+		<param name="bgcolor" value="#869ca7" /> 
+		<param name="allowScriptAccess" value="sameDomain" /> 
+	</object>
+</div>
+
+
+<p>　</p>
+</body>
+
+</html>
