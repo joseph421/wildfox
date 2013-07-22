@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,6 +14,8 @@
         <!--
         <script src="./js/bootstrap/js/bootstrap.js" type="text/javascript"></script>
         -->
+        <script src="./js/eidogo/player/i18n/cn.js"></script>
+        <script src="./js/quarkjs/js/quark.base-1.0.0.js"></script>
         <script src="./js/boundmenu/js/main.js"></script>
         <link rel="stylesheet" href="./js/boundmenu/templates/css/main.css" type="text/css" />
         <link rel="stylesheet" href="./js/artDialog/skins/black.css?4.1.2"></link>
@@ -20,8 +24,8 @@
         <script src="./js/wildfox/maingui.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="./js/CustomLoginFormStyling/css/style.css" />
         <link rel="stylesheet" type="text/css" href="./css/main.css" />
-        <script src="./js/CustomLoginFormStyling/js/modernizr.custom.63321.js"></script>
-        <script type="text/javascript" src="./js/eidogo/js/all.compressed.js"></script>
+        <script src="./js/CustomLoginFormStyling/js/modernizr.custom.63321.js"></script>        
+        <script type="text/javascript" src="./js/eidogo/player/js/all.compressed.js"></script>
     </head>
     <body>
         <div class="head">
@@ -56,8 +60,8 @@
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
                             <ul class="level2">
                                 <li><a href="#url" onclick="changePanel('selfIgoManual','');">自战棋谱</a></li>
-                                <li><a href="#url" onclick="changePanel('profession','');">历代棋士棋谱</a></li>
-                                <li><a href="#url" onclick="changePanel('game','');">打谱闯关</a></li>                                    
+                                <li><a href="#url" onclick="changePanel('professionalIgoManual','');">历代棋士棋谱</a></li>
+                                <li><a href="#url" onclick="changePanel('igoManualGame','');">打谱闯关</a></li>                                    
                             </ul>
                             <!--[if lte IE 6]></td></tr></table></a><![endif]-->
                         </li>
@@ -133,11 +137,11 @@
                         
                     </div>
                     <div class="leftPanel" id="proIgoManualLeftPanel">
-                        
+                        <div id="player-container"></div>
                     </div>
                     <div class="rightPanel" id="proIgoManualRightPanel">
                         
-                    </div>
+                    </div> 
                 </form>
                 <form class="form-6" id="igoManualGame">
                     <div class="listPanel" id="igoManualGameList">

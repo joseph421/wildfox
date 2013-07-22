@@ -19,7 +19,7 @@ $(":submit[name='loginSubmit']").click(function() {
 var doLogin = function(){
   var userId = $("#userInput").val();
   var pwd = $("#pwdInput").val();
-  $.ajax({		
+  $.ajax({
         url:"./src/main.php",
         type:"GET",
         data:{
@@ -75,6 +75,7 @@ var changePanel = function(panelName,subClass){
         $("#games").hide();
         $("#scoreManagement").hide();
         $("#userManagement").hide();
+        showConvas();
     }
     else if(panelName == 'professionalIgoManual'){
         $("#selfIgoManual").hide();
@@ -87,6 +88,7 @@ var changePanel = function(panelName,subClass){
         $("#games").hide();
         $("#scoreManagement").hide();
         $("#userManagement").hide();
+        loadEidogo("player-container","resource/sgf/blood_vomit.sgf");
     }else if(panelName == 'igoManualGame'){
         $("#selfIgoManual").hide();
         $("#professionalIgoManual").hide();
@@ -183,6 +185,21 @@ var changePanel = function(panelName,subClass){
     }
 };
 
+var showConvas = function(){
+    var container = Quark.getDOM("slftIgoManualLeftPanel");
+    container.style.background = "url(images/IgoBoard.jpg) repeat-x";
+    var canvas = Quark.createDOM("canvas", {width:480, height:320, style:
+        {
+            position:"absolute",
+            backgroundColor:"#fff"
+        }
+    });
+    container.appendChild(canvas);
+//    var canvasContext = new Quark.CanvasContext({
+//        canvas:canvas
+//    });
+}
+
 var doSendSGFString = function (){
     
 };
@@ -213,6 +230,46 @@ var testStorage = function(){
     }else{
         showMessage('Info','This browser does NOT support localStorage');
     }
+}
+
+var initEidogo = function(){
+    var player = new eidogo.Player({
+        container:       "player-container", // HTML element id indicating where to put the player
+        theme:           "standard", // "standard" or "compact"
+        sgfUrl:          "resource/sgf/blood_vomit.sgf", // relative URL (within same domain) to SGF file to load 
+        loadPath:        [0, 0], // The location within the game tree to start at
+        mode:            "play", // "play" or "view"
+        showComments:    true,
+        showPlayerInfo:  true,
+        showGameInfo:    true,
+        showTools:       true,
+        showOptions:     true,
+        markCurrent:     true,
+        markVariations:  true,
+        markNext:        false,
+        enableShortcuts: false,
+        problemMode:     false
+    });
+}
+
+var loadEidogo = function(containerID,sgfUrl){
+    var player = new eidogo.Player({
+        container:       containerID, // HTML element id indicating where to put the player
+        theme:           "standard", // "standard" or "compact"
+        sgfUrl:          sgfUrl, // relative URL (within same domain) to SGF file to load 
+        loadPath:        [0, 0], // The location within the game tree to start at
+        mode:            "play", // "play" or "view"
+        showComments:    true,
+        showPlayerInfo:  true,
+        showGameInfo:    true,
+        showTools:       true,
+        showOptions:     true,
+        markCurrent:     true,
+        markVariations:  true,
+        markNext:        false,
+        enableShortcuts: false,
+        problemMode:     false
+    });
 }
 
 artDialog.notice = function (options) {

@@ -160,7 +160,7 @@ function OnAutoAnimate() {
     	mySwf1.SolutionAnimateStartStop();
     }
 }
-    
+
 //收到开始自动演示正解图的回调消息
 function  OnSolutionAnimateStart(){
     btnAutoAnimate.value = "停止演示正解";
