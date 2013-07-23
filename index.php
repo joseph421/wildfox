@@ -24,6 +24,8 @@
         <script src="./js/wildfox/maingui.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="./js/CustomLoginFormStyling/css/style.css" />
         <link rel="stylesheet" type="text/css" href="./css/main.css" />
+        <link rel="stylesheet" type="text/css" href="./js/primeui/development/prime-ui-0.9.5.css" />
+        <script src="./js/primeui/development/prime-ui-0.9.5.js"></script>        
         <script src="./js/CustomLoginFormStyling/js/modernizr.custom.63321.js"></script>        
         <script type="text/javascript" src="./js/eidogo/player/js/all.compressed.js"></script>
     </head>
