@@ -1,5 +1,5 @@
 <?php
-
+require_once 'fileOption.php';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -39,5 +39,9 @@ if ($action == 'getUserInfo') {
     $response['status'] = '0000';
     $rtn =  json_encode($response);
     echo $rtn;
-}    
+}else if( $action == 'getFileList'){
+    $fileList = fileOption::getFileList('../resource/sgf');
+    echo $fileList;
+}
+
 ?>

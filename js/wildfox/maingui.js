@@ -64,6 +64,17 @@ var changePanel = function(panelName,subClass){
         $("#games").hide();
         $("#scoreManagement").hide();
         $("#userManagement").hide();
+    }else if (panelName=='mainPanel'){
+        $("#selfIgoManual").hide();
+        $("#professionalIgoManual").hide();
+        $("#igoManualGame").hide();
+        $("#liveAndDie").hide();
+        $("#arrangement").hide();
+        $("#crucia").hide();
+        $("#vedioClasss").hide();
+        $("#games").hide();
+        $("#scoreManagement").hide();
+        $("#userManagement").hide();
     }else if (panelName == 'selfIgoManual'){
         $("#selfIgoManual").show();
         $("#professionalIgoManual").hide();
@@ -76,6 +87,7 @@ var changePanel = function(panelName,subClass){
         $("#scoreManagement").hide();
         $("#userManagement").hide();
         showConvas();
+        getFileList();
     }
     else if(panelName == 'professionalIgoManual'){
         $("#selfIgoManual").hide();
@@ -198,6 +210,35 @@ var showConvas = function(){
 //    var canvasContext = new Quark.CanvasContext({
 //        canvas:canvas
 //    });
+}
+
+var getFileList = function(){
+    $.ajax({
+        url:"./src/main.php",
+        type:"GET",
+        data:{
+            action:"getFileList"            
+        },
+        dataType:"json",
+        timeout:"10000",    	
+        success:function(data){	    	
+            if (data==undefined ||data.body.userInfo == undefined){
+                showMessage("错误","请求数据失败。");
+                return;
+            }else{
+                if(data.status == "0000"){
+                    $("#loginPanel").hide();
+                    $("#contentPanel").show();
+                }else{
+                    showMessage("错误","输入的用户名或者密码错误，请确认后重试。");
+                    return;
+                }
+            }
+        },
+        error: function(){
+            showMessage("错误","请求数据失败。");
+        }
+    });
 }
 
 var doSendSGFString = function (){

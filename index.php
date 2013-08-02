@@ -57,7 +57,7 @@
             <section class="mainContent" id ="contentPanel" style="display:none">
                 <div id="menu">
                     <ul class="level1">
-                        <li class="level1-li"><a class="level1-a" href="#url">首页</a></li>
+                        <li class="level1-li"><a class="level1-a" href="#url" onclick="changePanel('mainPanel','')">首页</a></li>
                         <li class="level1-li"><a class="level1-a drop" href="#url">打谱<!--[if gte IE 7]><!--></a><!--<![endif]-->
                             <!--[if lte IE 6]><table><tr><td><![endif]-->
                             <ul class="level2">
