@@ -29,10 +29,16 @@ body {
 .form-6 leftPanel{
     
 }
+
+.form-6 listPanel{
+    width:180px;
+}
 .form-4 input{
     height: 32px;
 }
-
+.pui-menu-list {
+    margin-left: 0px;
+}
 .form-4 input[type=button]:focus {
     box-shadow: 
         0 1px 0 rgba(255,255,255,0.2), 

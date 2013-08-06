@@ -86,7 +86,7 @@ var changePanel = function(panelName,subClass){
         $("#games").hide();
         $("#scoreManagement").hide();
         $("#userManagement").hide();
-        showConvas();
+//        showConvas();
         getFileList();
     }
     else if(panelName == 'professionalIgoManual'){
@@ -222,13 +222,21 @@ var getFileList = function(){
         dataType:"json",
         timeout:"10000",    	
         success:function(data){	    	
-            if (data==undefined ||data.body.userInfo == undefined){
+            if (data==undefined ||data.body.fileList == undefined){
                 showMessage("错误","请求数据失败。");
                 return;
             }else{
                 if(data.status == "0000"){
-                    $("#loginPanel").hide();
-                    $("#contentPanel").show();
+                    $("#qipuList")[0].innerHTML ="";
+                    var htmlStr = "";
+                    for(var i=0; i<data.body.fileList.length;i++){
+                        if(data.body.fileList[i] != undefined)
+                            htmlStr = htmlStr + "<li><a>"+data.body.fileList[i]+"</a></li>";
+                    }
+                   
+                    $("#qipuList")[0].innerHTML = htmlStr;
+                    $("#qipuList").puislidemenu();
+//                    $("#selfIgoManualList").show();
                 }else{
                     showMessage("错误","输入的用户名或者密码错误，请确认后重试。");
                     return;

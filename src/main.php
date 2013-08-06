@@ -41,7 +41,7 @@ if ($action == 'getUserInfo') {
     echo $rtn;
 }else if( $action == 'getFileList'){
     $fileList = fileOption::getFileList('../resource/sgf');
-    echo $fileList;
+    $rtn =  json_encode($fileList);
+    echo $rtn;
 }
-
 ?>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,23 +10,25 @@
         <link rel="stylesheet" type="text/css" href="./js/bonbonButton/buttons.css">
         <link rel="stylesheet" type="text/css" href="./js/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="./js/bootstrap/css/bootstrap-responsive.css">
-        <!--
-        <script src="./js/bootstrap/js/bootstrap.js" type="text/javascript"></script>
-        -->
-        <script src="./js/eidogo/player/i18n/cn.js"></script>
-        <script src="./js/quarkjs/js/quark.base-1.0.0.js"></script>
-        <script src="./js/boundmenu/js/main.js"></script>
         <link rel="stylesheet" href="./js/boundmenu/templates/css/main.css" type="text/css" />
         <link rel="stylesheet" href="./js/artDialog/skins/black.css?4.1.2"></link>
-	<script src="./js/artDialog/artDialog.source.js?skin=black"></script>        
-        <script src="./js/jquery/jquery-2.0.0.js" type="text/javascript"></script>
-        <script src="./js/wildfox/maingui.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="./js/primeui/development/primeui-0.9.6.css" />
         <link rel="stylesheet" type="text/css" href="./js/CustomLoginFormStyling/css/style.css" />
         <link rel="stylesheet" type="text/css" href="./css/main.css" />
-        <link rel="stylesheet" type="text/css" href="./js/primeui/development/prime-ui-0.9.5.css" />
-        <script src="./js/primeui/development/prime-ui-0.9.5.js"></script>        
+        <link rel="stylesheet" type="text/css" href="./js/primeui/themes/aristo/theme.css" />
+        <!--
+        <script src="./js/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        -->        
+        <script src="./js/jquery/jquery-2.0.0.js" type="text/javascript"></script>
+        <script src="./js/jquery/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="./js/eidogo/player/i18n/cn.js"></script>
+        <script src="./js/quarkjs/js/quark.base-1.0.0.js"></script>
+        <script src="./js/boundmenu/js/main.js"></script>        
+	<script src="./js/artDialog/artDialog.source.js?skin=black"></script>      
         <script src="./js/CustomLoginFormStyling/js/modernizr.custom.63321.js"></script>        
         <script type="text/javascript" src="./js/eidogo/player/js/all.compressed.js"></script>
+        <script src="./js/primeui/development/primeui-0.9.6.js"></script>
+        <script src="./js/wildfox/maingui.js" type="text/javascript"></script>
     </head>
     <body>
         <div class="head">
@@ -124,8 +125,8 @@
                     </ul>
                 </div>                
                 <form class="form-6" id="selfIgoManual">
-                    <div class="listPanel" id="selfIgoManualList">
-                        
+                    <div class="listPanel" id="selfIgoManualList">棋谱列表
+                        <ul id='qipuList'></ul>
                     </div>
                     <div class="leftPanel" id="slftIgoManualLeftPanel">
                         
