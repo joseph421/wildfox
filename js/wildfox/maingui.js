@@ -231,7 +231,7 @@ var getFileList = function(){
                     var htmlStr = "";
                     for(var i=0; i<data.body.fileList.length;i++){
                         if(data.body.fileList[i] != undefined)
-                            htmlStr = htmlStr + "<li><a>"+data.body.fileList[i]+"</a></li>";
+                            htmlStr = htmlStr + "<li><a onclick='openSGF(\""+data.body.fileList[i]+"\");'>"+data.body.fileList[i]+"</a></li>";
                     }
                    
                     $("#qipuList")[0].innerHTML = htmlStr;
@@ -247,6 +247,10 @@ var getFileList = function(){
             showMessage("错误","请求数据失败。");
         }
     });
+}
+
+var openSGF = function(s){    
+    
 }
 
 var doSendSGFString = function (){
