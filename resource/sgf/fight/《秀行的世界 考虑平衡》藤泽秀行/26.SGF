@@ -1,0 +1,21 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]GN[慎重]CA[gb2312]HA[0]EV[《考虑平衡》(秀行的世界)]AB[ec][dc][cd][ce][cf][qo][fp][dn][en][fn][ej][oo][ro][jq][pn][pm][pd][ql][rk][qk][mc][so]AW[fo][hp][dp][po][pp][pq][qp][np][de][ed][qm][qn][rn][fd][sm][rl][fc][eh][dq][sn][eo][kc][ke]C[                慎重(黑先)
+   黑  杉内寿子
+   白  青木喜久代
+   黑在右下角弃掉三子，加固了外面，白的实利很大。但黑外面的势力与右上黑棋相配合，若作成大模样的话，显而易见是黑有利。
+   但是，不能只看到黑的有利条件，太好的事肯定有陷阱，在这里还是慎重一些好。
+]
+
+(;AE[cd][ce][cf][de][ed][fd][fc][ec][dc][eh][ej][fn][en][dn][eo][fo][fp][dp][dq][hp][jq][pq][pp][po][qp][np][oo][qo][ro][so][sn][rn][qn][pn][pm][qm][sm][rl][ql][qk][rk][pd][mc][kc][ke]N[实战图];B[pd];W[dp];B[qo];W[pq];B[cd];W[ed];B[ec];W[fc];B[dc];W[fd];B[cf];W[kc];B[qk];W[np];B[mc];W[ke];B[fp];W[hp];B[dn];W[dq];B[fn];W[eo];B[en];W[fo];B[jq];W[eh];B[ej];W[de];B[ce];W[qm];B[rm];W[rl];B[ql];W[rn];B[pm];W[qn];B[pn];W[po];B[ro];W[sm];B[so];W[sn];B[rk];W[qp];B[oo];W[pp]LB[em:A][cq:B][cp:C][fr:D][hr:E]C[捞空     实战图(1-46)
+    白12比普通的定式多拆了一路，做成空的话要大一些，但由此也成薄形了。黑15飞逼，白16便不能不补。
+    对黑17、19的双高挂，白20坚实的守角，再采用白22尖断的狙击手段。
+    黑23若在24位接，白在23位冲，黑A位挡很有力。在这之前，白20若于22位小尖，黑B，白C，黑20，白24，黑D，白E，黑并没什么了不起的手段。
+    白30开始在右下捞空。
+])
+(;B[ol]LB[pl:A]N[秀行的下一手、1图]C[在外面整形        秀行的下一手
+    黑1虎是蓄备力量的一手。
+    它直接防止了白A位的断。此手固然补了中央的弱点，但更重要的是做成厚势，限制了白在右边的侵入。
+    右边将来若发生战斗，极有可能会波及到下边黑一子，如果右下黑坚强有力，将会给下边黑子带来支援。
+];W[me]MN[1];B[oe]LB[sk:A][sj:B]C[ 1图(黑充分)
+    针对黑右边，白1大概是跳吧。右下黑A、B都是先手，往右边打入很难有根。白1消，黑2小尖应，是充分的布局。])
+(;B[lf]N[2图];W[md];B[nc];W[lh]LB[lg:A][pl:B]C[2图(不安)
+ 实战黑1尖冲，扩大右边棋样。白若从A位冲断，可直接作战。白2利后，于4位侵入，黑不安。由于黑留有B位断点，中央之战难于对白使用强力。]))

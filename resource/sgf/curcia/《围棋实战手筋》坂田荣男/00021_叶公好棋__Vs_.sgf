@@ -1,0 +1,40 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]GN[第21问 惊心动魄的对攻]CA[gb2312]HA[0]EV[围棋实战手筋(坂田荣男著)]AB[fp][pd][ho][op][kq][jq][dq][hm][in][go][ep][eo][br][fr][fq][dr][jg][aq][fd][hp][dm][dn][ej][ei][dh][ce][hi][hk][oc][de][cc][fc][eb][gd][pf][hd][ed][cr][oe][dk][qf][re][rd][pj][pk][pi][pl][ql][rm][ro][nr][nq][np][no][mo][nn][mm][mk][mi][mh][kh][ih][ii][hg][bj][bi][ch][ir][lr][ik][il][gk][gl][jm][ck][dj][cm]AW[hb][hc][gc][ic][kp][qe][dc][qp][rf][rg][qh][pg][of][ng][mg][qj][qk][eq][ko][io][gj][iq][cq][bq][qo][qn][pq][oq][or][bp][bo][do][dp][cn][hq][am][ol][om][nm][on][oo][nk][ml][ll][km][al][gq][gp][kl][jh][di][gh][bm][gi][ig][if][hf][hh][eh][dg][cj][fk][fm][fn][bk][aj][cl][dl][fo][en][lq][mp][lo][ji][dd][db][ec][fl][ip][fb][ga][kj]C[第21问  黑先
+            惊心动魄的对攻
+   局面已接近终盘，但这并不意味着战斗已
+经结束。黑有相当严厉的攻击手段，将发生一场惊心动魄的对攻。要把棋算清，直到最后。
+                     黑  坂田荣男  九  段
+                     白  石田秀芳  本因坊 
+                 第33期本因坊战决赛第7局
+]
+
+(;B[oh]N[正解图、1、2、3、4、5、6、7图];W[og];B[rk];W[rj];B[ki];W[jj];B[lf]C[  正解图(进攻)黑从1位觑开始，一步一步向白发起进攻。
+   黑3、白4交换后，再黑5打，然后7位封锁。这里将展开一场惊心动魄的
+对攻。  
+    黑这样下是需要勇气的，但仅仅是这一点还不够，更重要的是必须有准确的计算。
+];W[sk];B[rl];W[ne];B[mf];W[nf];B[md]C[ 1图(白的抵抗)白棋的抵抗是应该预见到的。
+白8打，白10扳。黑11后， 再13位封锁，不 让白棋出头。];W[nd]MN[1];B[nc];W[me];B[le];W[lg];B[kg];W[ld];B[mc];W[kf];B[ke];W[jf];B[je]
+(;W[qi]N[2、3、4图];B[ie];W[gg]C[2图(对攻形)本图着法双方皆属必然。
+    白以1 、3、5的次序冲，然后7、9打，将黑棋切断。
+    黑14是先手利，白15如果脱先，则黑可15位逃出一子。
+    以后的变化越来越复杂了。
+];B[nh]MN[1];W[sj];B[sh];W[sf];B[rn];W[oj];B[lh];W[oi];B[ph];W[sl];B[sm];W[rp]C[    3图(顺次紧气)现在形成了双方拼气的状态，黑只需顺次紧气即可。
+    黑1在味道好的地方紧气。
+    白2粘，黑 3点。白4立做成“刀五”，这 是长气的手筋。
+      黑5延气，接下来再7至11紧白气。
+];B[pe];W[qg];B[od];W[mj];B[se];W[so];B[rh]LB[li:A][sn:B]C[   4图(黑快一气)   黑13以下，双方均顺次紧气。
+   至黑19，双方的气巳经很清楚了。
+    白“刀五”共八气，现在黑已走了两手，所以还剩六气。黑表面是六口气，但白A, B两处均不入子，所以实际是七口气。黑快一气杀白。
+])
+(;W[nh]MN[1]N[5、6、7图];B[ni];W[oi];B[oj];W[qi]
+(;B[rn]N[5图];W[sf];B[sh];W[sj]C[  5图(黑被吃)2图白13改在本图1位冲，黑2挡，白3扑后再5位接。黑如6位延气，则白7, 9做成“刀五”，白反快气杀黑。变化从略，请自行确认。])
+(;B[sj]MN[1]N[6图、7图];W[si];B[rh];W[rn];B[nj];W[sl];B[sm];W[ph];B[pe];W[qg];B[sf];W[sg];B[se];W[ok];B[lh];W[pm];B[od];W[sn];B[sh];W[qm];B[oi];W[lj];B[sj];W[sk]C[  6图(立即收气)前图黑6延气是恶手，本图黑1、3立即收气才是正确的下法。
+    白4以下，双方各自拼命收气。
+];B[sl];W[mj];B[sj];W[ri];B[sh];W[sk];B[co];W[em];B[sj];W[hr];B[rh];W[jr];B[ff]C[ 7图(黑劫胜)接前图。黑25打，白26收气，黑27提，双方开始打劫。这是关系到两块棋生死的大劫。
+    白28是本身劫材。黑31是很有力的劫材，由于白有A, B两处断，只得32位应劫。
+    白34,黑不应，白36后双方形成转换。
+    黑再占到37位，已是胜势
+])))
+(;AB[oh][rk][ki][lf][rl][mf][md][nc][le][kg][mc][ke][je][ie]AW[og][rj][jj][sk][ne][nf][nd][me][lg][ld][kf][jf][qi][gg]AE[hg]N[8图、9图];B[ff];W[oi];B[nh];W[ph];B[nj];W[rn];B[fj];W[li];B[lh];W[lj];B[oj];W[gf]LB[sn:A]C[ 8图(实战经过)在双方拼气的紧要关头，实战时黑方却突然退缩。黑1转投他处，失去了一举取胜的机会。黑1以为与这边白棋拼气可以取胜，然而这是个失误。
+    白2立即抢占拼气的急所，黑棋变得十分危险了。
+   黑7断又是坏棋，此时于A位渡尚可一争，  因为右边有一个缓一气的劫。 被白8 、 10  紧气，黑不行。
+];B[fg]MN[1];W[mj];B[ni];W[qm];B[fh];W[ok];B[ge];W[pm];B[he];W[sm];B[fi];W[sl]C[  9图(黑被吃)黑1开始紧气，以下至白12，黑全部被吃。]))

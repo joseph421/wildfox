@@ -40,7 +40,8 @@ if ($action == 'getUserInfo') {
     $rtn =  json_encode($response);
     echo $rtn;
 }else if( $action == 'getFileList'){
-    $fileList = fileOption::getFileList('../resource/sgf');
+    $pathName = $_GET['pathName'];
+    $fileList = fileOption::getFileList('../resource/sgf',$pathName);
     $rtn =  json_encode($fileList);
     echo $rtn;
 }

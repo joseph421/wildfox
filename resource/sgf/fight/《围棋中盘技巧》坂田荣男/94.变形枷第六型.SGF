@@ -1,0 +1,8 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[po][oo][oq][qn][qm][pl]AW[qq][rp][qo][rn][pi][pn][on]TR[on][pn]C[\[第六型\] （黑先）
+      黑已被左右分断，如果不吃住△两子棋筋，以后势必受累。]
+;B[nn]C[黑1扳当然，问题是以后如何下。];W[om]
+(;B[ml]C[黑3飞枷正着。
+      根据周围具体情况，黑1夹有时候是成立的，请牢记。];W[ol];B[ok];W[pk];B[nl];W[ql];B[nm]C[黑7、9做倒扑的手段请注意。
+      请自行证，白无论怎么下都逃不出去。])
+(;B[nk]C[黑1枷的方向不对];W[nm]C[请注意行棋方向问题。])
+(;B[nl]C[黑1夹失算];W[nm];B[mm];W[mn];B[no];W[ml];B[lm];W[ol]C[至白8逃出]))

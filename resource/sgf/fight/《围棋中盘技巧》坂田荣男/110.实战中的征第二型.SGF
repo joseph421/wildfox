@@ -1,0 +1,13 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[gp][fp][ho][in][io][ip][iq][ir][hm][hl][fl][pp][oq][qm]AW[cp][cn][eq][fq][gq][hq][hp][go][gn][hn][im][jm][ik][ko][kq][mq]C[\[第二型\] （黑先）
+
+      如图，黑棋七零八落。有没有擒获白三子的手段呢？关键是如何躲开引征。]
+
+(;B[eo]C[（尖是正解）
+      乍眼看似乎黑已穷水尽，毫无出路。其实，黑有抓住白三子气紧弱点的好手。即黑1小尖，这是黑棋的唯一生路，白三子棋筋已陷入罗网。]
+(;W[fo];B[ep];W[en]C[白2、4应最强手，];B[fn]C[但黑有5位扑的紧气好手，白无法逃出];W[fm];B[gm];W[fn];B[dn];W[em];B[dm];W[el];B[ek];W[dl];B[cl])
+(;W[gm];B[gl]
+(;W[en]C[白1、3应，];B[fn]C[黑4即成倒扑。])
+(;W[fo];B[ep];W[en];B[fn]))
+(;W[en];B[fn]))
+(;B[fo]C[（失败）
+      黑1太呆板，显然不成功。那末怎样下好呢？];W[fn]))

@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="./js/primeui/development/primeui-0.9.6.css" />
         <link rel="stylesheet" type="text/css" href="./js/CustomLoginFormStyling/css/style.css" />
         <link rel="stylesheet" type="text/css" href="./css/main.css" />
-        <link rel="stylesheet" type="text/css" href="./js/primeui/themes/aristo/theme.css" />
+        <link rel="stylesheet" type="text/css" href="./js/primeui/themes/pepper-grinder/theme.css" />
         <!--
         <script src="./js/bootstrap/js/bootstrap.js" type="text/javascript"></script>
         -->        
@@ -125,8 +125,8 @@
                     </ul>
                 </div>                
                 <form class="form-6" id="selfIgoManual">
-                    <div class="listPanel" id="selfIgoManualList">棋谱列表
-                        <ul id='qipuList'></ul>
+                    <div class="listPanel" id="selfIgoManualList">
+                       
                     </div>
                     <div class="leftPanel" id="slftIgoManualLeftPanel">
                         

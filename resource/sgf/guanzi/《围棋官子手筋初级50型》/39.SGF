@@ -1,0 +1,6 @@
+(;SZ[19]AB[ds][dr][dq][do][dp][dn][cn][bn][an]AW[ao][bo][co][cp][cq][cr][cs]C[围棋官子手筋初级50型
+第39型  黑先
+
+黑应该如何掏空白角？]
+(;N[正解图]B[bq];W[aq];B[br];W[ar];B[bs];W[ap]C[黑1正解，黑先手双活。])
+(;N[失败图]B[ar];W[bq];B[aq];W[ap];B[bs]C[本图的结果是黑后手双活，当然失败。]))

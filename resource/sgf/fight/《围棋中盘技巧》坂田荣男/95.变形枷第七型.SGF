@@ -1,0 +1,12 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[pp][op][oq][or][pr][qo][ro][rn]AW[rs][sr][rq][qr][pq][qp][qq][po][qn][pi][kq][ko]TR[po][qn]C[\[第七型\] （黑先）
+
+      黑被左右分断，如不吃住△两子棋筋，恐怕要陷入若战。怎样才能吃住△子呢？]
+
+(;B[om]C[（正着）
+      黑1正着，]
+(;W[pn];B[ql]C[      黑1、3是值得学习的变形枷手筋。有此两着，白三子就只能俯首待毙。];W[pm];B[pl];W[on]C[白4、6出逃无理];B[nn];W[nm];B[ol];W[no];B[mn];W[oo];B[mo];W[np];B[mq]C[至黑15，白显然没有摆脱被枷的命运。
+      这就是黑1变形枷的威力。])
+(;W[pm]C[对白1];B[oo];W[pn];B[pl]C[      黑2打、4扳扼要。白假如执意要救出棋筋，将被全歼。];W[ql];B[on];W[qm];B[qk])
+(;W[on]C[对白1];B[nn];W[qm];B[pm]C[黑2扳、4顶];W[pn];B[ql]LB[oo:A]C[白3如下在A位，黑打吃后形成征子。]))
+(;B[on]C[（失败）
+      黑1枷失败，];W[pn];B[om];W[ql]LB[pl:A]C[      白2、4后就吃掉右边黑三子。此处，白4下在A位也行。]))

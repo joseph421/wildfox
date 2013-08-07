@@ -87,7 +87,7 @@ var changePanel = function(panelName,subClass){
         $("#scoreManagement").hide();
         $("#userManagement").hide();
 //        showConvas();
-        getFileList();
+        getFileList('selfIgoManual');
     }
     else if(panelName == 'professionalIgoManual'){
         $("#selfIgoManual").hide();
@@ -100,7 +100,8 @@ var changePanel = function(panelName,subClass){
         $("#games").hide();
         $("#scoreManagement").hide();
         $("#userManagement").hide();
-        loadEidogo("player-container","resource/sgf/blood_vomit.sgf");
+        getFileList('professionalIgoManual');
+//        loadEidogo("player-container","resource/sgf/blood_vomit.sgf");
     }else if(panelName == 'igoManualGame'){
         $("#selfIgoManual").hide();
         $("#professionalIgoManual").hide();
@@ -134,6 +135,7 @@ var changePanel = function(panelName,subClass){
         }else {
             
         }
+        getFileList(subClass);
     }else if(panelName == 'vedioClasss'){
         $("#selfIgoManual").hide();
         $("#professionalIgoManual").hide();
@@ -212,29 +214,39 @@ var showConvas = function(){
 //    });
 }
 
-var getFileList = function(){
+var getFileList = function(s){
+    var pathName = "";
+    if(s == 'selfIgoManual'){
+        pathName = "/IgoManual/selfIgoManual";
+    }else if (s == 'professionalIgoManual'){
+        pathName = "/IgoManual/professionalIgoManual";
+    }else if(s == ''){
+        
+    }
+    
     $.ajax({
         url:"./src/main.php",
         type:"GET",
         data:{
-            action:"getFileList"            
+            action:"getFileList",
+            pathName: pathName
         },
         dataType:"json",
         timeout:"10000",    	
-        success:function(data){	    	
+        success:function(data){
             if (data==undefined ||data.body.fileList == undefined){
                 showMessage("错误","请求数据失败。");
                 return;
             }else{
                 if(data.status == "0000"){
-                    $("#qipuList")[0].innerHTML ="";
-                    var htmlStr = "";
+                    $("#selfIgoManualList")[0].innerHTML ="";
+                    var htmlStr = "<ul id='qipuList'>";
                     for(var i=0; i<data.body.fileList.length;i++){
                         if(data.body.fileList[i] != undefined)
                             htmlStr = htmlStr + "<li><a onclick='openSGF(\""+data.body.fileList[i]+"\");'>"+data.body.fileList[i]+"</a></li>";
                     }
-                   
-                    $("#qipuList")[0].innerHTML = htmlStr;
+                    htmlStr = "棋谱列表"+ htmlStr+"</ul>";
+                    $("#selfIgoManualList")[0].innerHTML = htmlStr;
                     $("#qipuList").puislidemenu();
 //                    $("#selfIgoManualList").show();
                 }else{
@@ -249,7 +261,7 @@ var getFileList = function(){
     });
 }
 
-var openSGF = function(s){    
+var openSGF = function(s){
     
 }
 

@@ -1,0 +1,8 @@
+(;AW[dp][cq][bq][eq][do][dn][cn][bm]AB[bp][cp][co][bn][cm][cl][bk]SZ[19]C[围棋官子手筋初级50型
+第十五型  黑先
+
+黑如何补棋呢，如果轻率的补和手筋会相差4目棋。黑应该如何下呢？]
+(;B[ao]LB[aq:a][ap:b]C[黑1是冷静的好手。以后白a、黑b，白一子被吃住了。]N[图1 正解])
+(;B[am]N[图2 失败];W[ap];B[bo];W[ao];B[bl]C[黑比正解图要少了4目。])
+(;AW[rb][sb][qb][qc][pd][oc][lc][pe][pf][qf][rg]AB[qe][qd][rc][rd][rf][qg][qh][ri]N[图3 参考]B[se]LB[sg:a][sd:b]C[见右上。在右上的棋型中，黑1也是同样的手筋。黑如果在a叫吃，白b，黑空就被大幅度侵消。]
+))

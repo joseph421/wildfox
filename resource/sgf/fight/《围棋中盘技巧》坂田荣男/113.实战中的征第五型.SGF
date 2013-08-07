@@ -1,0 +1,15 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[qo][pp][qp][oq][or][pr]AW[pq][pl][op][oo][qq][rq]C[\[第五型\] （白先）
+
+本形白以下的着法与征子条件是否有利密切相关。]
+;W[qn]C[      白1靠是严厉手段，但以下如何演变完全取决于征子条件是否有利。];B[rn];W[rm]
+(;B[rp]C[黑如征子不利，只能4位挡];W[so];B[qm];W[pn];B[ro];W[sm];B[rl];W[ql];B[rr]C[白5点、9下立均是好手，至黑12止，白外势厚壮。];AE[ql][pl][rl][qm][rm][sm][so][rn][ro][qo][pp][qp][rp][rq][qq][pq][pr][rr][or][oq][op][oo][pn][qn]C[请看一下本型定式的演变过程];W[cp];B[eq];W[hp]
+(;B[cq]MN[1]C[黑1托，];W[bq];B[dp]
+(;W[co]C[白4如长，];B[cr];W[dm]LB[br:A][hr:B]TR[hp]C[      至白6，因为△子处在高位，黑以后或A或B总可以得到一点，所以白不满。])
+(;W[cr]C[白1是强手，会形成对黑不利的变化。];B[co];W[dq];B[bp];W[cq];B[eo];W[er];B[fq];W[gr]LB[dn:A][do:B][dl:C]C[      至白9止，白不仅获得了可观的实利，而且，以后还有白A、黑B、白C，对黑棋屐总攻的狙击手段。因此，如图变化白有利（前图黑不托，先尖，就是为了避免本图的变化----要命随手）。]))
+(;B[dp]LB[cq:A]C[黑1尖是为了避免走A位被白扳打的变化。]
+(;W[co]C[白2如长];B[cq]C[黑3再托，以下变化对黑有利。];W[bq];B[cr];W[dm]LB[br:A][hr:B]C[黑可以考虑选择A或者B，是黑有利的结果。])
+(;W[cq]LB[co:A]C[白1也是强硬的着法，如在A位退，对黑有利。];B[co];W[do];B[bo];W[eo];B[dq];W[cr];B[bp]C[      至黑8形成了问题图的棋形。再次强调，以后的变化与征子关系非常密切。];W[fr]LB[fq:A]MN[1]C[如果白征子不利，不能在A位用强，而只能在1位应。];B[fq];W[gq];B[dr];W[fp];B[br]C[至黑6是通常的应法。]))
+(;B[en]LB[go:A]C[黑如果征子不利，可以简明在走1位跳出或者A位，均相安无事。];W[cm]))
+(;B[pn]C[黑如果征子有利，可以1位打，];W[qm];B[on];W[nn];B[po]C[这种场合，黑方可以用强，走3、5位];W[om];B[no]C[黑7断强手];W[np];B[mo];W[mp];B[lp];W[mq];B[lo]LB[nm:A][mr:B]C[黑13粘，以下非A即B]
+(;W[nm]C[黑征子有利时，白如14位防征，];B[mr]C[黑15顶，手筋。];W[lq];B[kq];W[lr];B[kr];W[nr];B[ls];W[ms];B[ks]C[黑21、23紧气好手，];W[nq]C[白只能24];B[ns];W[os];B[ps]C[黑25、27成劫，];W[qr]C[至白28，白非常不利，由于是黑的先手劫，白几近崩溃。])
+(;W[rp]LB[nm:A]C[黑如果A位征子不利，白可1位吃住黑数子，黑崩溃。])))

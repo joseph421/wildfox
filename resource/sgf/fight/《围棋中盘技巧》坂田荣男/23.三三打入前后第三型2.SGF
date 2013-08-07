@@ -1,0 +1,4 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[cp][cm][fq][pp][oq][pn][qj]AW[nq][np][kq][hq][qq]TR[qq]C[在下边白棋较厚时，]
+;B[qp]LB[or:A]C[黑1挡是正着。因为A位立并不能对下边白棋形成攻势。];W[or]
+(;B[pq];W[pr];B[qr]C[此后，白留有A位打的收官手段。])
+(;B[pr]C[黑1改在这里应];W[pq];B[qr];W[op];B[rq]C[至黑5亦为一法]))

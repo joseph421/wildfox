@@ -1,0 +1,7 @@
+(;C[围棋官子手筋初级50型
+第十二型 黑先
+
+]AW[bm][cm][dm][em][en][eo][ep][eq][er][jq]AB[bn][cn][dn][do][dp][dq][dr];W[an]
+;B[ao];W[am]C[白1、3先手扳接，黑应该如何补？]
+(;B[br]LB[es:a][fs:b][ds:c][gr:d]C[黑补在这里才是正确的。以后黑a、白b、黑c、白d是黑先手2目。]N[图1 正解])
+(;N[图2 失败];B[bp];W[ds];B[cs];W[es];B[cr]C[黑4补的不对，经过白5、7是先手，黑净损4目。]))

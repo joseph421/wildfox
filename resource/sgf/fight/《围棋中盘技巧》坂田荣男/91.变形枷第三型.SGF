@@ -1,0 +1,13 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[np][mp][lp][kp][jp][io][in][jn][gn][go][gq][km][kl][il]AW[ip][iq][jr][lr][nr][pr][jo][ko][kn][lm][mo][jm][im][hm][gm][fm]LB[mm:A][mn:B][ll:C][no:D]C[\[第三型\] （黑先）
+  
+      请设法吃掉中间白△三子棋筋。注意，黑如A位夹，经白B、黑C、白D，白就安全逸出。]
+;B[nm]C[（黑1正着）
+      黑1是变形枷的要点，只有这样下，才能挫败白子的突围行动。]
+(;W[ll]C[白如2];B[ln];W[lo];B[mn];W[no];B[oo]LB[mm:A][ml:B]C[则黑3、5、7。])
+(;W[ln]C[白1粘];B[ll]C[黑当然2位封锁];W[nn];B[on]LB[mn:A][lo:B]C[至黑4。白被围歼。
+      白1改下A或B位，黑可以2位应，以下变化请读者自行研究。])
+(;W[nn]C[（尖）白1尖靠，不肯就范，];B[mm]C[黑2夹，好手，白仍难逃罗网。]
+(;W[lo];B[no]C[黑5是好手，以下成征。];W[ll];B[mn];W[ln];B[lk]C[成征。])
+(;W[ll]C[对白1长];B[ln];W[lo];B[no];W[mn];B[on];W[ln];B[lk]C[黑2以下至8，仍形成征子。])
+(;W[mn]C[对白1];B[on]C[黑2以下，];W[ll];B[ln];W[lo];B[no];W[ln];B[lk]C[仍难免被征。]))
+(;W[mm]C[白若1位];B[lo];W[ln];B[ml]C[至黑4，白撞紧气，仍然无法突围。]))

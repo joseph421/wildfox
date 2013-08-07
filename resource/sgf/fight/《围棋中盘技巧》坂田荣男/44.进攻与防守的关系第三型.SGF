@@ -1,0 +1,6 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[po][qp][qq][qk][dp][dn][bm][am][bl][ck][dk][ek]AW[al][ak][bk][bj][cj][dj][fq][pq][qr][or][np]C[\[第三型\] （白先）
+
+]
+;B[eq]C[黑1尖顶，白怎样应？]
+(;W[er];B[dr];W[ep]TR[am][bm][bl]C[由于已有▲三子，白不可能点三三，故白2、4先手利用后];B[dq];W[ip]LB[kp:A][in:B]C[6位守空。不失法度。此后，若黑A则白B。])
+(;W[fp]C[白1长虽是常法，];B[ip]LB[ho:A]C[      但黑2的攻击恰如黑愿，由于左边黑棋坚实，白只得A位肩冲出逃，不满。];W[ir]C[白3二线求活也很乏味。];B[jq];W[jr];B[kq];W[kr];B[lq];W[mr]C[       试看黑4以下至白9的变化，白空被压缩到二线难以忍受。]))

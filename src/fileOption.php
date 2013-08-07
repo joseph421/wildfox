@@ -12,17 +12,22 @@
  */
 class fileOption {
     //put your code here
-    public static  function getFileList($path){
+    public static  function getFileList($path,$pathName){
         $fileList = array(
            
         );
         
-        $dir = opendir($path);
+        $dir = opendir(($path.$pathName));
         while(($file = readdir($dir))!=false){
-            if ($file!="." && $file!="..") { 
-                $ns = explode('.', $file);
-                array_push($fileList, $ns[0]);  
-            } 
+            $file = iconv("GB2312", "UTF-8", $file); 
+            if ($file!="." && $file!="..") {                 
+                if(!is_dir($file)){
+                    $ns = explode('.', $file);
+                    array_push($fileList, $ns[0]);  
+                }else{
+                    array_push($fileList, $file);  
+                }
+            }   
         }
         
         $response = array(

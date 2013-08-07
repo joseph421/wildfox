@@ -1,0 +1,22 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]GN[势力的发展]CA[gb2312]HA[0]EV[《考虑平衡》(秀行的世界)]AB[cg][ed][de][df][cd][bd][dg][cj][pp][pj][qd][pd][od][me][lc][dh][mp]AW[ch][dp][cl][bc][cc][dc][dd][be][ce][qc][pc][nc][nb][cf][bg][kp][kn]C[                势力的发展(黑先)
+    黑   高尾绅路
+    白   江铸久
+    右边黑三连星作模样，白下边的一间跳是对抗黑模样有力的一手。
+    左上、中央是黑的势力，白取了角空，这个结果从全局看是黑有利。比较白的实利而言，黑可能凭借势力的发展取胜，这是对全局发展的判断。]
+
+(;AE[bc][cc][dc][dd][ed][cd][bd][be][ce][cf][de][df][dg][dh][ch][cg][bg][cj][cl][dp][kp][kn][mp][pp][pj][me][lc][nb][nc][od][pd][qd][qc][pc]N[实战图];B[pd];W[dd];B[pp];W[dp];B[pj];W[nc];B[lc];W[qc];B[qd];W[pc];B[od];W[nb];B[me];W[kp];B[mp];W[kn];B[cj];W[cl];B[df];W[ch];B[cd];W[ce];B[de];W[cf];B[cg];W[cc];B[bd];W[bg];B[dg];W[be];B[dh];W[bc];B[ed];W[dc]LB[cn:A][bf:B]C[左上的激战     实战图(1-34)
+    白14的大场和白16的跳，是相当不错的走法，取得了左下的平衡。但是，下一手白18是疑间手，即使扩大了左下的模样，也不大，并且此手明显薄弱。
+    白18若下在A位，将是坚实的一手。
+    白20下得大激烈了。黑21不在B位跳，而从正面作战是不行的。黑21托，遭白22、 24反击，令人困惑。此后，白26为了吃角。因小失大，局面反而空得黑有利了。])
+(;B[kl]LB[kk:A]N[秀行的下一手]C[模样的急所   秀行的下一手
+    黑1镇是下一手。
+    这以后不用摆棋也可以讲清楚了。
+    黑1具有把右上、左上黑的势力联络为一体的作用，是从右边到中央黑模样的急所。
+    黑若不下1位，被白先走到A位一带，模样就被打开了大缺口，棋就结束了吧。白若走到A位，还扩张了下边白模样。])
+(;B[fq]N[1图];W[dq];B[fo];W[gp];B[fp];W[fm]C[1图(实战)
+    黑1破下边白势。
+    白2守角，黑3跳，白4、6攻击。这块黑棋就算做活了，把下边白势也破了。可在中央却让白增强了势力，上边黑势力的强大作用丧失殆尽。这是黑不利的局面。])
+(;AE[bc][cc][dc][dd][ed][cd][bd][be][ce][cf][de][df][dg][dh][ch][cg][bg][cj][cl][dp][kp][kn][mp][pp][pj][me][lc][nb][nc][od][pd][qd][qc][pc]N[2图];B[pd];W[dd];B[pp];W[dp];B[pj];W[nc];B[lc];W[qc];B[qd];W[pc];B[od];W[nb];B[me];W[kp];B[mp];W[kn];B[cj];W[cl];B[df];W[ch];B[cd];W[ce];B[de];W[cf];B[cg];W[dg]MN[1];B[bg];W[bd];B[cc];W[bf];B[ed];W[bh];B[eg];W[dh]LB[lb:A][ef:B]C[2图(白有利)
+    实战图的白26，不从本图1位断是不行的。本图白1断后，演变成黑2至6的结果。
+    到白9，左边至下边形成白的大模样。同时，上边白还有A位托，B位断，黑很薄，这是白有利的局面。
+]))

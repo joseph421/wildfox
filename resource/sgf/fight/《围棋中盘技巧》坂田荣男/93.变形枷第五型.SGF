@@ -1,0 +1,14 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[lq][qq][pp][po][pn][qo][on][om]AW[jq][qp][rp][ro][qn][rm][pm][pl][pq]TR[lq][pq]C[\[第五型\] （黑先）
+
+      在有▲的场合，如何吃住白△子？]
+;B[oq]C[黑1打吃，可以吃住白一子，你知道吗？];W[pr];B[qr];W[or];B[nr];W[nq]C[请算清白6以后的变化。];B[ps]C[（连续滚包）];W[op];B[os]C[黑7、9连续滚打，只能如此连续滚吃。];W[oq];B[mq]C[关键在于以后如何下。];W[mr];B[ns];W[mp]
+(;B[lp];W[mo]
+(;B[ln]
+(;W[mn];B[np];W[no];B[oo];W[np];B[mm]C[      本题虽然是双方必然的应接，由于着数较多，容易误算。])
+(;W[nm]C[白如1位靠];B[nn]C[黑2冲];W[mn];B[mm];W[lm];B[nl];W[lo];B[np]C[      到黑8，白6子已不能保全，由此可知变形枷的效果。]))
+(;B[np];W[no];B[oo];W[np];B[ln];W[nm]C[      由于黑1、3是撞紧气的恶手，白6靠的突围手段成立
+]))
+(;B[oo]C[（失败）
+黑1是俗手];W[np]
+(;B[lo]C[黑3俗手，葬送了大好良机。];W[lp];B[kp];W[kq];B[lr];W[ko];B[jp];W[mo];B[ln];W[mn];B[lm];W[mm]C[至白14，简单逃出包围圈。])
+(;B[lp]C[对白2，黑苦1];W[mo];B[ln]C[黑3封不住];W[mn];B[lm];W[ol])))

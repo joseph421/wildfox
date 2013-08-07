@@ -1,0 +1,8 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]CA[gb2312]HA[0]AB[po]AW[pq]C[\[第六型\]
+
+本例也是一定式的变化]
+;W[qm];B[qq];W[qp];B[pp];W[qo];B[qn];W[pn];B[rn];W[rq];B[qr];W[ro]
+(;B[oq];W[rm];B[on];W[pm]C[至白15止，是白稍厚的定式变化，黑总想避开这一变化，那就要依靠征子有利，即黑12的下法])
+(;B[rm]LB[rl:A][op:B]TR[pm]C[      黑很想走1位曲，但白能不能▲位粘，形成还A位接即B位征、二者必居其一的局面呢？这就是问题的关键所在。];W[oq];B[np];W[rr];B[ql]C[黑征子有利，就会形成如图结果，以下变化]
+(;W[pm]C[白如6位粘];B[pl];W[nm];B[so];W[rp];B[op];W[ol];B[nq];W[pr];B[or];W[qs];B[pj];W[ok];B[qh]C[以下至黑19大致如此];W[kp];B[lo]C[白20、黑21常见走法。])
+(;W[op]LB[pm:A]C[白不在A位粘，而走1位];B[oo];W[no];B[on];W[nn];B[om];W[mp]C[以下至白7，形成外势。其优劣需视周围的配合情况而定。])))

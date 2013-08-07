@@ -1,0 +1,10 @@
+(;AB[ap][bp][cp][dp][eq][fq][gq][gr][gs][fs][bs][sp][rp][qp][pp][oq][nq][mq][mr][rs][ns]AW[aq][bq][cq][dq][br][cs][ds][er][fr][nr][or][pq][qq][rq][sq][rr][ps]LB[es:a][dr:b][ms:c][qs:d][pr:e]C[围棋官子手筋初级50型
+第五型
+左下角的棋型是由右下的棋型演变而来。对于右下的棋型，黑在c接是手筋，对此，白在d接就形成了左下的棋型,白如果在e接，黑d长，白角上就出问题了。
+
+现在来看左下的棋型，黑如果简单的黑a、白b交换，当然不行了。黑应该如何下呢？]GN[围棋官子手筋初级50型
+第五型]US[http://www.flygo.net
+]
+
+(;B[dr]N[图1 正确的下法];W[as];B[es]C[到这里，与基本图中简单的黑a、白b相比较，差5目。])
+(;B[dr];W[cr];B[es];W[as]C[如果白2提，那么黑是先手获利，可以满足。]))

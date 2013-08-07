@@ -1,0 +1,28 @@
+(;GM[1]AP[StoneBase:SGFParser.3.0.1]SZ[19]GN[先发制人的一击]CA[gb2312]HA[0]EV[《考虑平衡》(秀行的世界)]AB[ce][jp][dk][nq][rc][qd][qe][pf][qg][og][ng][mf][ld][oe][dc]AW[pd][cp][ep][hq][qp][pq][qb][qc][pe][of][nf][ne][nd][oc][hd]TR[nd]C[              先发制人的一击(黑先)
+    黑  菅野清规
+    白  安倍吉辉
+    右上角被滚包大难看，为防止此形状，形成白△补的局面。
+    黑外璧虽有断点，但取得先手，或许这是控制大局的机会吧。在何处能找到先发制人的一击。
+    比起右边，左上一带更大。]
+
+(;AE[dc][ce][dk][cp][ep][hq][jp][nq][pq][qp][ng][og][qg][pf][of][nf][mf][ne][oe][pe][qe][qd][pd][nd][ld][oc][qc][qb][rc][hd]N[实战图];B[qd];W[qp];B[dc];W[cp];B[ce];W[oc];B[ld];W[of];B[qg];W[ep];B[nq];W[pq];B[jp];W[hq];B[dk];W[hd];B[mf];W[qc];B[rc];W[pd];B[qe];W[qb];B[oe];W[pe];B[pf];W[ne];B[og];W[nf];B[ng];W[nd]C[走成了不利的形    实战图(1-30)
+  右上到黑21，是普通的进行。
+  白22的立，令人意外，黑23的靠，封锁正好。这是白不利的结果，早有定论。
+  白22怎么下，才是普通的呢?安倍君为何选择走成不利的形，他的考虑是什么，将在后面阐明。
+    请考虑将有利变为优势，再导向胜利的构想。])
+(;B[ge]LB[le:A][ke:B]TR[ld]N[秀行的下一手、1图]C[压迫     秀行的下一手
+    由于白上边一子十分孤立，正确的判断是左上一带比右边更大。
+    黑1尖冲，是压迫白棋，培育左边的积极着手，是预测白动出而做出的调子。
+    右上白棋，坚如盘石，因而黑▲一子变轻，根据场合弃掉也可以。白A位靠时，黑B位扳，轻处理。];W[he];B[gf]LB[gd:A][fe:B]C[1图(幅度绝好)
+    对于黑1，白2若压，黑3长，左边便自然而然形成绝好幅度。
+    白2若在A位爬，则黑在B位退。对黑1、 3两手持好感吧!])
+(;B[ge]N[2图];W[gd];B[fe];W[jd];B[ie];W[id];B[kf]C[2图(封锁)
+    白2至4，白棋安治，黑5、7封锁，黑好调。])
+(;B[ge]N[3图];W[gd];B[fe];W[jd];B[ie];W[he]MN[1];B[hf];W[if];B[id];W[ic];B[je]C[3图〔作战)
+    若白1、3反击，黑4、6位应战。如2、3图所示，黑没有任何不安。
+])
+(;AE[dc][ce][dk][cp][ep][hq][jp][nq][pq][qp][ng][og][qg][pf][of][nf][mf][ne][oe][pe][qe][qd][pd][nd][ld][oc][qc][qb][rc][hd]N[4图];B[qd];W[qp];B[dc];W[cp];B[ce];W[oc];B[ld];W[of];B[qg];W[ep];B[nq];W[pq];B[jp];W[hq];B[dk];W[hd];B[mf];W[qc];B[rc];W[pd];B[qe];W[pf]MN[1];B[qb];W[qf];B[rf];W[pc];B[nd];W[pe];B[re];W[oh]C[4图(定式)
+    实战图的白22应该在本图的1位并，是定式，并的作用是防止靠。安倍君忍受不了黑2的打吃，其实到白9，右边黑棋全部龟缩进去，并没有什么了不起。])
+(;AE[dc][ce][dk][cp][ep][hq][jp][nq][pq][qp][ng][og][qg][pf][of][nf][mf][ne][oe][pe][qe][qd][pd][nd][ld][oc][qc][qb][rc][hd]N[5图];B[qd];W[qp];B[dc];W[cp];B[ce];W[oc];B[ld];W[of];B[qg];W[ep];B[nq];W[pq];B[jp];W[hq];B[dk];W[hd];B[mf];W[oh]MN[1]C[5图(其他方法)
+    如果觉得4图的黑2打吃太难受，白1也有单跳的，这也是顺其自然。不管怎么说，实战白被包围的形状不好。4图、5图是普通下法。
+    4图、5图都是一局棋。]))
