@@ -30,8 +30,13 @@ body {
     
 }
 
-.form-6 listPanel{
+.form-6 .listPanel{
     width:180px;
+    height: 400px;
+}
+
+.form-6 .listPanel .pui-slidemenu-wrapper{
+    height: 400px;
 }
 .form-4 input{
     height: 32px;

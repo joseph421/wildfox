@@ -41,8 +41,10 @@ if ($action == 'getUserInfo') {
     echo $rtn;
 }else if( $action == 'getFileList'){
     $pathName = $_GET['pathName'];
-    $fileList = fileOption::getFileList('../resource/sgf',$pathName);
+    $fileList = fileOption::getFileList($pathName);
     $rtn =  json_encode($fileList);
+    
+    $rtn = iconv("GB2312", "UTF-8", $rtn); 
     echo $rtn;
 }
 ?>

@@ -87,7 +87,7 @@ var changePanel = function(panelName,subClass){
         $("#scoreManagement").hide();
         $("#userManagement").hide();
 //        showConvas();
-        getFileList('selfIgoManual');
+        getFileList('selfIgoManual','../resource/sgf/IgoManual/selfIgoManual');
     }
     else if(panelName == 'professionalIgoManual'){
         $("#selfIgoManual").hide();
@@ -100,7 +100,7 @@ var changePanel = function(panelName,subClass){
         $("#games").hide();
         $("#scoreManagement").hide();
         $("#userManagement").hide();
-        getFileList('professionalIgoManual');
+        getFileList('professionalIgoManual','../resource/sgf/IgoManual/professionalIgoManual');
 //        loadEidogo("player-container","resource/sgf/blood_vomit.sgf");
     }else if(panelName == 'igoManualGame'){
         $("#selfIgoManual").hide();
@@ -124,6 +124,7 @@ var changePanel = function(panelName,subClass){
         $("#games").hide();
         $("#scoreManagement").hide();
         $("#userManagement").hide();
+        var subPath = "";
         if(subClass == "liveAndDie"){
             
         }else if(subClass == "arrangement"){
@@ -135,7 +136,7 @@ var changePanel = function(panelName,subClass){
         }else {
             
         }
-        getFileList(subClass);
+        getFileList(subClass,"../resource/sgf/"+subClass);
     }else if(panelName == 'vedioClasss'){
         $("#selfIgoManual").hide();
         $("#professionalIgoManual").hide();
@@ -214,13 +215,25 @@ var showConvas = function(){
 //    });
 }
 
-var getFileList = function(s){
-    var pathName = "";
-    if(s == 'selfIgoManual'){
-        pathName = "/IgoManual/selfIgoManual";
-    }else if (s == 'professionalIgoManual'){
-        pathName = "/IgoManual/professionalIgoManual";
-    }else if(s == ''){
+var getFileList = function(type,path){
+    var pathName = path;
+    var htmlStr = "";
+    var divListComp;
+    if(type == 'selfIgoManual'){        
+        htmlStr = "棋谱列表<ul id='qipuList'>";
+        divListComp = $("#selfIgoManualList");
+    }else if (type == 'professionalIgoManual'){        
+        htmlStr = "棋谱列表<ul id='qipuProList'>";
+        divListComp = $("#proIgoManualList");
+    }else if(type == 'liveAndDie'){        
+        htmlStr = "习题列表<ul id='liveAndDieUlList'>";
+        divListComp = $("#liveAndDieList");
+    }else if(type == 'arrangement'){        
+        htmlStr = "习题列表<ul id='arrangementUlList'>";
+        divListComp = $("#arrangementList");
+    }else if(type == 'curcia'){
+        
+    }else if(type == 'guanzi'){
         
     }
     
@@ -239,16 +252,24 @@ var getFileList = function(s){
                 return;
             }else{
                 if(data.status == "0000"){
-                    $("#selfIgoManualList")[0].innerHTML ="";
-                    var htmlStr = "<ul id='qipuList'>";
                     for(var i=0; i<data.body.fileList.length;i++){
                         if(data.body.fileList[i] != undefined)
-                            htmlStr = htmlStr + "<li><a onclick='openSGF(\""+data.body.fileList[i]+"\");'>"+data.body.fileList[i]+"</a></li>";
+                            htmlStr = htmlStr + "<li><a onclick='getFileList(\""+type+"\",\""+pathName+"/"+data.body.fileList[i]+"\");'>"+data.body.fileList[i]+"</a></li>";
                     }
-                    htmlStr = "棋谱列表"+ htmlStr+"</ul>";
-                    $("#selfIgoManualList")[0].innerHTML = htmlStr;
-                    $("#qipuList").puislidemenu();
-//                    $("#selfIgoManualList").show();
+                    htmlStr =  htmlStr+"</ul>";
+                    
+                    divListComp[0].innerHTML = htmlStr;
+                    if(type == 'selfIgoManual'){
+                        $("#qipuList").puislidemenu();
+                    }else if (type == 'professionalIgoManual'){
+                        $("#qipuProList").puislidemenu();
+                    }else if (type == 'liveAndDie'){                                              
+                        $("#liveAndDieUlList").puislidemenu();
+                    }else if (type == 'arrangement'){
+                        $("#arrangementUlList").puislidemenu();
+                    }
+                    
+
                 }else{
                     showMessage("错误","输入的用户名或者密码错误，请确认后重试。");
                     return;
@@ -262,7 +283,22 @@ var getFileList = function(s){
 }
 
 var openSGF = function(s){
-    
+     $.ajax({
+        url:"./src/main.php",
+        type:"GET",
+        data:{
+            action:"getFileList",
+            pathName: s
+        },
+        dataType:"json",
+        timeout:"10000",    	
+        success:function(data){
+            
+        },
+        error: function(){
+            showMessage("错误","请求数据失败。");
+        }
+     });
 }
 
 var doSendSGFString = function (){
